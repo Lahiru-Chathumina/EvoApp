@@ -1,0 +1,30 @@
+<div class="dashboard-container">
+<div class="table-container">
+  <h2>Audit history</h2><br>
+  <table class="table table-hover table-bordered shadow-lg">
+    <thead class="custom-thead">
+      <tr>
+        <th scope="col">User ID</th>
+        <th scope="col">Admin ID</th>
+        <th scope="col">Reson for Change</th>
+        <th scope="col">Timestamp</th>
+        <th scope="col">Action type</th>
+        <th scope="col">Affected Entity</th>
+        <th scope="col">New date</th>
+        <th scope="col">Old date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let audit of audits">
+            <td>{{audit.userId}}</td>
+            <td>{{audit.adminId}}</td>
+            <td>{{audit.reasonForChange}}</td>
+            <td>{{audit.timestamp}}</td>
+            <td [ngClass]="getActionClass(audit.actionType)">{{audit.actionType}}</td>
+            <td>{{audit.affectedEntity}}</td>
+            <td>{{audit.newDate}}</td>
+            <td>{{audit.oldDate}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

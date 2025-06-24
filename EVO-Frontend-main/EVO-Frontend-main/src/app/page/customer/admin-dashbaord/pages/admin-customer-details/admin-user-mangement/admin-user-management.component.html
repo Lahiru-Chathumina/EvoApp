@@ -1,0 +1,115 @@
+<!-- Tabs -->
+<div class="tabset">
+  <input type="radio" name="tabset" id="tab1" checked>
+  <label for="tab1">Customer</label>
+  <input type="radio" name="tabset" id="tab2">
+  <label for="tab2">Supplier</label>
+
+  <div class="tab-panels">
+    <!-- Customer Panel -->
+   <section id="tab1" class="tab-panel">
+  <h2>Customer</h2>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Profile</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Contact Number</th>
+          <th>Address</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userList">
+          <td>{{ user.id }}</td>
+          <td>
+            <img class="profile-img" [src]="user.profileImageUrl" (error)="handleImgError($event)">
+          </td>
+          <td>{{ user.firstName }}</td>
+          <td>{{ user.lastName }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.contactNumber }}</td>
+          <td>{{ user.address }}</td>
+          <td>
+            <button class="delete-btn" (click)="deleteUser(user.id)">Delete</button>
+            <button class="update-btn" (click)="openUserUpdatePopup(user)">Update</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Customer Update Popup -->
+<div class="popup" *ngIf="showUserPopup">
+  <div class="popup-content">
+    <span class="close-btn" (click)="closeUserPopup()">&times;</span>
+    <h3>Update Customer</h3>
+     <input type="text" placeholder="ID" [(ngModel)]="selectedUser.id">
+    <input type="text" placeholder="First Name" [(ngModel)]="selectedUser.firstName">
+    <input type="text" placeholder="Last Name" [(ngModel)]="selectedUser.lastName">
+    <input type="email" placeholder="Email" [(ngModel)]="selectedUser.email">
+    <input type="text" placeholder="Contact Number" [(ngModel)]="selectedUser.contactNumber">
+    <input type="text" placeholder="Address" [(ngModel)]="selectedUser.address">
+    <button (click)="validateUpdateCustomer(selectedUser.id)">Update</button>
+  </div>
+</div>
+
+
+
+
+<!-- Supplier Panel -->
+<section id="tab2" class="tab-panel">
+  <h2>Supplier</h2>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Business Name</th>
+          <th>Contact</th>
+          <th>Email</th>
+          <th>Description</th>
+          <th>Availability</th>
+          <th>Category</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let supplier of supplierList">
+          <td>{{ supplier.id }}</td>
+          <td>{{ supplier.businessName }}</td>
+          <td>{{ supplier.businessContactNumber }}</td>
+          <td>{{ supplier.businessEmail }}</td>
+          <td>{{ supplier.description }}</td>
+          <td>{{ supplier.availability }}</td>
+          <td>{{ supplier.category }}</td>
+          <td>
+            <button class="delete-btn" (click)="deleteSupllier(supplier.id)">Delete</button>
+            <button class="update-btn" (click)="openSupplierUpdatePopup(supplier)">Update</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Update Popup -->
+<div class="popup" *ngIf="showSupplierPopup">
+  <div class="popup-content">
+    <span class="close-btn" (click)="closeSupplierPopup()">&times;</span>
+    <h3>Update Supplier</h3>
+        <input type="text" placeholder="id" [(ngModel)]="selectedSupplier.id">
+    <input type="text" placeholder="Business Name" [(ngModel)]="selectedSupplier.businessName">
+    <input type="text" placeholder="Contact Number" [(ngModel)]="selectedSupplier.businessContactNumber">
+    <input type="email" placeholder="Email" [(ngModel)]="selectedSupplier.businessEmail">
+    <input type="text" placeholder="Description" [(ngModel)]="selectedSupplier.description">
+    <input type="text" placeholder="Availability" [(ngModel)]="selectedSupplier.availability">
+    <input type="text" placeholder="Category" [(ngModel)]="selectedSupplier.category">
+    <button (click)=" validateUpdateSupplier(selectedSupplier.id)">Update</button>
+  </div>
+</div>

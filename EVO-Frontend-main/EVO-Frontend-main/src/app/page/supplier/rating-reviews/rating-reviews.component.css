@@ -1,0 +1,151 @@
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.stat {
+    text-align: left;
+}
+
+.big-text {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.sub-text {
+    color: gray;
+    font-size: 10px;
+}
+
+.date-range {
+    background: #ececec;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+.rating-chart {
+    margin-top: 15px;
+    font-size: 10px;
+
+}
+
+.rating-bar {
+    display: flex;
+    align-items: center;
+    margin: 5px ;
+    margin-top: 1px;
+}
+
+.bar {
+    height: 5px;
+    border-radius: 3px;
+    margin: 0 10px;
+    flex-grow: 1;
+}
+
+
+.review {
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 2px;
+    padding-bottom: 1px;
+    padding-top: 1px;
+
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 35px;
+    height: 35px;
+    background: gray;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.date {
+    color: gray;
+    font-size: 12px;
+}
+
+.review-body {
+    margin-top: 5px;
+
+
+}
+
+.stars {
+    font-size: 10px;
+    font-weight: bold;
+    color: gold;
+}
+
+.review-text {
+    margin-top: 5px;
+    font-size: 10px;
+    color: #333;
+}
+
+
+.review-buttons {
+    margin-top: 10px;
+}
+
+.btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 3px 3px;
+    border-radius: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    font-size: 10px;
+
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+.bi-star-fill{
+    color:orange;
+}
+
+.profile-pic{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-pic img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.review{
+  margin-top: 30px !important;
+}

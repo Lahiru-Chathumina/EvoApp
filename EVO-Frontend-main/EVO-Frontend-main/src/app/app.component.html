@@ -1,0 +1,60 @@
+<router-outlet></router-outlet>
+<div class="floating-massage-btn">
+  <div class="position-relative" (click)="showWhatsAppBoat = true" style="cursor:pointer;">
+    <div 
+      class="pulse rounded-circle shadow-lg p-3 d-flex align-items-center justify-content-center"
+      style="background: linear-gradient(90deg, #3B82F6, #9333EA);"
+    >
+      <svg 
+        width="24" height="24" viewBox="0 0 24 24"
+        fill="none" stroke="white" stroke-width="1.5"
+        stroke-linecap="round" stroke-linejoin="round"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        <circle cx="9" cy="10" r="1"/>
+        <circle cx="13" cy="10" r="1"/>
+        <circle cx="17" cy="10" r="1"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+
+    <div *ngIf="showWhatsAppBoat" class="chat-overlay" (click)="showWhatsAppBoat = false">
+        <div class="chat-panel-responsive" (click)="$event.stopPropagation()">
+            <div class="chat-panel shadow-lg rounded-4 p-4 bg-white">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h2 class="h6 evo-color mb-0 fw-bold">Evo Chat</h2>
+                    <button (click)="showWhatsAppBoat = false" class="btn-close" aria-label="Close"></button>
+                </div>
+                <div #chatContainer class="chat-evo-container" style="max-height:300px; overflow-y:auto;">
+                    <div class="message bot" *ngIf="botResponse">
+                        {{ botResponse }}
+                    </div>
+                    <div class="message user card mt-2 p-2" *ngIf="userMessage">
+                        {{ userMessage }}
+                    </div>
+                </div>
+                <div class="quick-inquiries">
+                    <p class="section-title">Common questions:</p>
+                    <div class="quick-options">
+                        <button *ngFor="let reply of quickReplies" 
+                                class="quick-option"
+                                (click)="handleQuickReply(reply)">
+                            {{ reply }}
+                        </button>
+                    </div>
+                </div>
+                <div class="chat-input d-flex mt-3">
+                    <input [ngModel]="userMessage" (ngModelChange)="userMessage = $event" class="form-control" placeholder="Ask Anything" />
+                    <button class="btn btn-primary ms-2" (click)="sendMassage()" [disabled]="isLoading" style="background: linear-gradient(90deg, #3B82F6, #9333EA);">
+                        {{ isLoading ? 'Sending...' : 'Send' }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+

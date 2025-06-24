@@ -1,0 +1,56 @@
+
+/* ---------------------------------------------------------------- */
+.card {
+    position: relative;
+    box-shadow: 2px 0 10px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+ 
+.card-body{
+    padding-left: 150px;
+}
+.content{
+    margin-top:60px;
+}
+
+/* ---------------------------------------- */
+.avatar-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+}
+.C{
+    border-radius:10px;
+    border-color: #ffffff;
+    background-color:#0066FF;
+    border-color: #0066FF;
+}
+.R{
+    border-radius:10px;
+    border-color: #ffffff;
+    background-color:#ff3c00;
+    border-color: #d35a35;
+}
+.avatar{
+    margin-left:100px;
+}
+.img-fluid{
+    width:1000%;
+    height:120PX;
+    margin-bottom:10PX;
+}
+.btnsave{
+    background-color:#0066FF;
+    border-radius:6px;
+    color:#ffffff;
+    border-color:#0066FF;
+    padding: 5px 6px;
+    
+    
+}
+
+
+
+

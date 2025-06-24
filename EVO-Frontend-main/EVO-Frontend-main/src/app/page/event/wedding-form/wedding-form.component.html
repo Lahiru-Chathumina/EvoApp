@@ -1,0 +1,148 @@
+<div class="my-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-10 my-4">
+      <div class="card shadow-lg border-0 rounded-lg overflow-hidden">
+        <div class="row g-0">
+          <div class="col-lg-5 d-none d-lg-block p-0">
+            <div class="h-100 position-relative image-slider">
+              <div id="weddingInspirationCarousel" class="carousel slide carousel-fade h-100" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#weddingInspirationCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#weddingInspirationCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#weddingInspirationCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner h-100">
+                  <div class="carousel-item active h-100">
+                    <img src="https://cdn.pixabay.com/photo/2022/11/04/16/24/wedding-7570266_1280.jpg" class="img-cover" >
+                  </div>
+                  <div class="carousel-item h-100">
+                    <img src="https://cdn.pixabay.com/photo/2021/10/12/17/52/couple-6704262_1280.jpg" class="img-cover">
+                  </div>
+                  <div class="carousel-item h-100">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/14/04/25/bride-1822587_1280.jpg" class="img-cover">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#weddingInspirationCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#weddingInspirationCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+              <div class="image-overlay d-flex flex-column justify-content-end p-4">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="card-header bg-transparent">
+              <div class="text-center p-4">
+                <h2 class="text-gradient fw-bold mb-1">Wedding Registration</h2>
+                <p class="text-muted mb-0">Start planning your perfect day</p>
+              </div>
+            </div>
+            <div class="card-body p-4">
+              <form>
+                <div class="row g-4 " *ngIf="nextpageNumber===1" >
+                  <div class="col-12">
+                    <h5 class="sub-topic card-title mb-3"><i class="bi bi-heart-fill me-2"></i>Couple Details</h5>
+                    <div class="card bg-light border-0 p-2 mb-3 ">
+                      <div class="row g-3">
+                        <div class="col-md-6 ">
+                          <label for="brideName" class="form-label fw-semibold">Bride's Name</label>
+                          <div class="input-group ">
+                            <span class=" input-group-text bg-white"><i class="bi bi-person-heart"></i></span>
+                            <input type="text" class="form-control shadow-none" placeholder="Enter bride's name"
+                              [(ngModel)]="bridesName" name="brideName">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="groomName" class="form-label fw-semibold">Groom's Name</label>
+                          <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="bi bi-person"></i></span>
+                            <input type="text" class="form-control shadow-none" id="groomName" placeholder="Enter groom's name"
+                              [(ngModel)]="groomsName" name="groomName">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="guestCapacity" class="form-label fw-semibold">Expected Guest Count</label>
+                          <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="bi bi-people"></i></span>
+                            <input type="number" class="form-control shadow-none" id="guestCapacity" placeholder="Number of guests" min="1"
+                              [(ngModel)]="guestscount" name="guestCapacity">
+                          </div>
+                        </div>
+                         <div class="col-md-6">
+                          <label for="weddingCulture" class="form-label fw-semibold">Cultural Tradition</label>
+                          <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="bi bi-globe"></i></span>
+                            <select [(ngModel)]="tradition" name="weddingCulture" class="form-select shadow-none" id="weddingCulture">
+                              <option value="" selected>Select tradition</option>
+                              <option value="Sinhala">Sinhala</option>
+                              <option value="Muslim">Muslim</option>
+                              <option value="Tamil">Tamil</option>
+                              <option value="Christian">Christian</option>
+                              <option value="Other">Other</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center mt-4">
+                    <a class="text-decoration-none"><i class="bi bi-arrow-left me-2"></i></a>
+                    <button  type="button" class="gradient-btn"
+                     (click)="nextButtonOnClick(2)"> Next <i class="bi bi-arrow-right ms-2"></i>
+                    </button>
+                  </div>
+                </div>
+
+                    <div *ngIf="nextpageNumber===2">
+                  <div class="col-12"  >
+                    <h5 class="card-title mb-3 sub-topic"><i class="bi bi-calendar-heart me-2"></i>Wedding Details</h5>
+                    <div class="card bg-light border-0 p-3">
+                      <div class="row g-3">
+                        <div class="col-md-6">
+                          <label for="weddingDate" class="form-label fw-semibold">Wedding Date</label>
+                          <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="bi bi-calendar-date"></i></span>
+                            <input type="date" class="form-control shadow-none" id="weddingDate"
+                            [min]="minDate"  [(ngModel)]="weddingDate" name="weddingDate">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="weddingTime" class="form-label fw-semibold">Start Time</label>
+                          <div class="input-group">
+                              <span class="input-group-text bg-white"><i class="bi bi-clock"></i></span>
+                              <input type="time" class="form-control shadow-none" id="weddingStartTime"
+                                [(ngModel)]="startTime" name="weddingStartTime"       >
+                          </div>
+                      </div>
+                        <div class="col-md-6">
+                          <label for="weddingTime" class="form-label fw-semibold">End Time</label>
+                          <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="bi bi-calendar-date"></i></span>
+                            <input type="time" class="form-control shadow-none" id="WeddingEndTime"
+                              [(ngModel)]="endTime" name="WeddingEndTime"                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center mt-4">
+                    <a class="text-decoration-none" (click)="nextButtonOnClick(1)"><i class="bi bi-arrow-left me-2"></i></a>
+                    <button (click)="confirmButtonOnClick()" type="button" class="gradient-btn"  >
+                       Continue to Venue Selection <i class="bi bi-arrow-right ms-2"></i>
+                    </button>
+                    </div>
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

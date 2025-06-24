@@ -1,0 +1,126 @@
+<div style="overflow: hidden; height: calc(100vh - 80px)">
+  <div
+    data-bs-toggle="modal"
+    data-bs-target="#exampleModal"
+    class="add-post-button-container"
+  >
+    <h5 style="padding-top: 10px">Create post</h5>
+  </div>
+
+  <div class="feed-container">
+    <div class="scroll-container">
+      <div class="post-container" *ngFor="let post of data">
+        <div class="post">
+          <div class="post-header">
+            <div class="post-header-left">
+              <img [src]="post.profile_image_url" class="post-avatar" />
+              <div class="post-author-info">
+                <div class="post-author-name">{{ post.author_name }}</div>
+                <div class="post-date">{{ prettifyDate(post.createdAt) }}</div>
+              </div>
+            </div>
+            <div class="post-header-right">
+              <button class="like-button" (click)="likePost(post.id!)">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  [attr.fill]="post.liked ? '#1877f2' : 'none'"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="#1877f2"
+                  style="width: 24px; height: 24px"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                  />
+                </svg>
+                <span>{{ post.like_count }}</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="post-body">
+            <div class="post-title">{{ post.title }}</div>
+            <img *ngIf="post.image_url" [src]="post.image_url" class="post-image" />
+            <div class="post-content">{{ post.content }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Create a new post</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3 d-flex flex-column align-items-center text-center">
+            <img [src]="modalProfileImageUrl" class="post-avatar mb-2" style="width:60px;height:60px;border-radius:50%;" />
+            <span style="font-weight: 600;">{{ modalAuthorName }}</span>
+            <span style="font-size: 0.95em; color: #888;">{{ modalEmail }}</span>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Post Title</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Awesome title"
+              [(ngModel)]="modalPostTitle"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Post Content</label>
+            <textarea
+              class="form-control"
+              rows="3"
+              placeholder="Write an awesome post here!"
+              [(ngModel)]="modalPostContent"
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Image (optional)</label>
+            <input
+              type="file"
+              class="form-control"
+              (change)="onImageSelected($event)"
+              accept="image/*"
+            />
+            <img *ngIf="modalImagePreview" [src]="modalImagePreview" style="max-width: 100%; margin-top: 10px;" />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+            (click)="createPost()"
+          >
+            Create Post
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="preloader" class="d-flex justify-content-center align-items-center" style="position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(255,255,255,0.7);z-index:10;">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</div>

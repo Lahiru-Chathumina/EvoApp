@@ -1,0 +1,82 @@
+<div class="container ">
+  <div class="row ">
+    <div class="h-50">
+      <div id="carouselExampleDark" class="carousel carousel-dark slide h-50 text-white ">
+        <div class="carousel-indicators  rounded-5 ">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+            aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner rounded-5 mt-3 ">
+          <div class="active carousel-item " style="height: 35vh;" data-bs-interval="10000">
+            <img
+              src="https://i.postimg.cc/Dy94MKxv/birthday.jpg"
+              class="d-block w-100" alt="...">
+            <div class="d-md-block d-none carousel-caption text-white">
+              <h5>Birthday Party</h5>
+              <p>Make your birthday special with customized celebrations for all ages.</p>
+            </div>
+          </div>
+          <div class="carousel-item" style="height: 35vh;"  data-bs-interval="2000">
+            <img
+              src="https://i.postimg.cc/Y0cjy6xX/wedding.jpg"
+              class="d-block w-100" alt="...">
+            <div class="d-md-block d-none carousel-caption text-white">
+              <h5>Wedding</h5>
+              <p>Create the wedding of your dreams with our expert planning services.
+                 From intimate ceremonies to grand celebrations, we make your special day unforgettable.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://i.postimg.cc/9FhrdB00/get1.jpg"
+              class="d-block w-100" style="height: 35vh;" alt="...">
+            <div class="d-md-block d-none carousel-caption text-white">
+              <h5>Get Together</h5>
+              <p>Plan casual get-togethers that bring friends and family closer.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://i.postimg.cc/XqwXMrHn/party1.jpg"
+              class="d-block w-100" style="height: 35vh;"alt="...">
+            <div class="d-md-block d-none carousel-caption text-white">
+              <h5>Anniversary</h5>
+              <p>Celebrate your love story with elegant anniversary events designed just for you.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+
+   
+    <div class="text-center mt-3">
+      <button type="button" class="btn gradient-btn text-white" routerLink="/event/event-selection">Create</button>
+    </div>
+  </div>
+  
+<!-- ---------------------------------------------------------------------------------------------------------------------- -->
+  <br>
+  <div class="row">
+    <div class="col-lg-3 modern"  *ngFor="let event of eventDetails">
+      <app-event-card [eventDetails]="event"></app-event-card>
+    </div>
+  </div>
+</div>

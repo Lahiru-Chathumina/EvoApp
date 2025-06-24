@@ -1,0 +1,38 @@
+html, body, div{
+    zoom: 0.94;
+  }
+  
+  .card-body{
+    width: 80%;
+    margin-top: 20px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  
+  .bottom-space{
+    padding: 80px;
+  }
+  
+  
+  .footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 1.2rem;
+    margin-top: 10px;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .footer-content{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .carousel-item{
+    height: 600px;
+  }
+  
+  
+  

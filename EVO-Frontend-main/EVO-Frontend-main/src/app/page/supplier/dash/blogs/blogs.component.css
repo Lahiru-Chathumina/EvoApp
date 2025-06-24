@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column; /* Column layout for spacing */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px; /* Adds space from top and bottom */
+    gap: 20px; /* Adds space between elements */
+  }
+
+.content{
+    margin-top:-60px;
+}
+
+  .card {
+    background: #cccccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 350px;
+    text-align: center;
+    margin: 10px 0; /* Adds space above and below */
+  }
+  
+  .card-title {
+    color: #0066FF;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px; /* Increased margin for spacing */
+  }
+  
+  .card-subtitle {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 15px; /* Added more spacing */
+  }
+  
+  .card-text {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .card-text.title {
+    font-weight: bold;
+    color: #444;
+    font-size: 16px;
+    margin-bottom: 15px; /* Increased spacing */
+  }
+  
+  .card-text.subtitle {
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 10px;
+  }
+  
+  .card-list {
+    list-style: none;
+    padding: 0;
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .card-list li {
+    padding: 5px 0;
+  }
+  
+  button {
+    margin-top: 15px;
+    padding: 8px 12px;
+    background-color: #d000ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  
+  .card {
+    background: linear-gradient(to bottom, #ffffff, #e0e0e0); /* Gradient Effect */
+    border-radius: 15px; /* Smooth Rounded Corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Better Shadow */
+    padding: 25px;
+    width: 380px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); /* Hover Effect */
+  }
+  
+
+  

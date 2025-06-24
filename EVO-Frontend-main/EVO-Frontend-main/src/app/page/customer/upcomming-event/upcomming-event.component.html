@@ -1,0 +1,49 @@
+<div class="header-container">
+    <h2>Event Management</h2>
+</div>
+
+<div class="container">
+    <h2 class="section-title"><i class="fas fa-play-circle"></i>Ongoing Events</h2>
+    <div class="ongoing-card-container">
+        <div *ngIf="ongoingEvent; else noOngoing" class="card ongoing">
+            <div class="card-header"><div><i class="fas fa-calendar-day"></i>ONGOING EVENT</div>
+            <span class="badge bg-danger pulse">LIVE</span>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">{{ ongoingEvent.title }}</h3>
+                <p class="card-description">{{ ongoingEvent.description }}</p>
+                <div class="time-info">
+                    <span><i class="fas fa-hourglass-start"></i>Started: {{ ongoingEvent.startTime | date:'medium' }}</span>
+                </div>
+                <div class="time-info">
+                    <span><i class="fas fa-hourglass-end"></i>Ends: {{ ongoingEvent.endTime | date:'medium' }}</span>
+                </div>
+                <div class="view-more-container">
+                    <button type="button" class="view-more-button" routerLink="/customer/ongoing-event">View Timeline</button>
+                </div>
+            </div>
+        </div>
+        <ng-template #noOngoing>
+            <div>No ongoing events.</div>
+        </ng-template>
+    </div>
+
+    <h2 class="section-title"><i class="fas fa-calendar-alt"></i>Upcoming Events</h2>
+    <div class="card-container">
+        <div *ngFor="let event of upcomingEvents" class="card upcoming">
+            <div class="card-header">
+              <div><i class="fas fa-calendar-plus">&nbsp;</i>UPCOMING EVENT</div>
+            </div>
+            <div class="card-body">
+                <h3 class="card-title">{{ event.title }}</h3>
+                <p class="card-description">{{ event.description }}</p>
+                <div class="time-info">
+                    <span><i class="fas fa-clock"></i>Starts: {{ event.startTime | date:'medium' }}</span>
+                </div>
+                <div class="time-info">
+                    <span><i class="fas fa-clock"></i>Ends: {{ event.endTime | date:'medium' }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,108 @@
+<!-- i passed values to the container using Input() and i used async pipe. it subscribes to the variable and automatically retrieves its emitted value (Lahiru20)-->
+<br>
+<div class="tabset">
+
+  <input type="radio" name="tabset" id="tab1" checked>
+  <label for="tab1">Timeline</label>
+
+  <input type="radio" name="tabset" id="tab2" >
+  <label for="tab2">Task Scedule</label>
+
+  <div class="tab-panels">
+  <section id="marzen" class="tab-panel">
+      <h2 id="head-tab-1" class="title-head-tabs">Ongoing Timeline</h2>
+
+<div class="container">
+  <br>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-12">
+          <ng-container *ngIf="currentTasks$ | async as currentTasks">
+            <div *ngFor="let task of currentTasks" class="mb-4">
+              <app-ongoing-event-card
+                [title]="task.title"
+                [description]="task.description"
+                [start_time]="task.start_time"
+                [end_time]="task.end_time">
+              </app-ongoing-event-card>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+  </div>
+
+  <ng-container *ngIf="currentTasks$ | async as currentTasks">
+    <app-timeline
+      [timestamp]="currentTasks[0].start_time"
+      [title]="getTimelineTitle(currentTasks)"
+      [description]="getGroupedTaskDescription(currentTasks)">
+    </app-timeline>
+  </ng-container>
+  </section>
+
+    <section class="tab-panel">
+      <h2 id="head-tab2" class="title-head-tabs">Task Schedule</h2>
+      <div class="table-container">
+        <table class="task-table">
+          <thead>
+            <tr>
+              <th>Task No</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Duration</th>
+              <th>Progress</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let task of agendaTask; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ task.title }}</td>
+              <td>
+                {{ task.description }}
+              </td>
+              <td>
+                <b *ngIf="isOngoing(task.start_time, task.end_time); else staticDuration">
+                ⌛&nbsp;&nbsp;&nbsp;&nbsp;{{ getCountdown(task.end_time) }}
+                </b>
+                <ng-template #staticDuration>
+                🕒&nbsp;&nbsp; {{ task.start_time | date: 'shortTime' }} - {{ task.end_time | date: 'shortTime' }}
+                </ng-template>
+              </td>
+              <td>
+                <div class="progress-bar-container">
+                  <div
+                    class="progress-bar"
+                    [style.width]="getTaskProgress(task)"
+                    [attr.aria-valuenow]="getTaskProgress(task)"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <span class="progress-text">{{ getTaskProgress(task) }}</span>
+              </td>
+              <td>
+                <span [ngClass]="getStatusClass(task)" class="status-badge">
+                  {{ getTaskStatus(task) }}
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+

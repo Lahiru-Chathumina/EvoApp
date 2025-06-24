@@ -1,0 +1,183 @@
+<div class="row g-3 mb-4 mx-0 px-3 justify-content-center align-items-end">
+ 
+  <div class="col-md-3 col-sm-6 px-2">
+    <label class="form-label fw-bold mb-1">Date</label>
+    <select class="form-select py-2">
+      <option selected>Newest Date</option>
+      <option>Oldest Date</option>
+    </select>
+  </div>
+  
+  <div class="col-md-3 col-sm-6 px-2">
+    <label class="form-label fw-bold mb-1">Service Type</label>
+    <select class="form-select py-2">
+      <option>Catering</option>
+      <option>Photography</option>
+      <option>Venue</option>
+      <option>Decorator</option>
+    </select>
+  </div>
+
+  <div class="col-md-3 col-sm-8 px-2">
+    <label class="form-label fw-bold mb-1">Search</label>
+    <div class="input-group">
+      <input type="text" class="form-control py-2" placeholder="Search...">
+      <button class="btn btn-outline-secondary py-2" type="button">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+  </div>
+</div>
+    <div class="container">
+      <h1 class="mb-5" style="text-align: center; color: #292a2c;"> Supplier Requests</h1>
+      <table>
+          <thead>
+              <tr>
+                  <th> DATE</th>
+                  <th> NAME</th>
+                  <th> TYPE</th>
+                  <th> View Details</th>
+                  <th> Status</th>
+                  <th> Export</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let request of requests">
+                  <td>{{request.date}}</td>
+                  <td class="name-container">
+                    <img src={{request.image}} alt="Profile" class="profile-img">{{request.name}}
+
+                </td>
+                  <td>{{request.type}}</td>
+                  <td><button class="view-btn" (click)="openModal(request)" data-bs-toggle="modal" data-bs-target="#detailsModal">View</button></td>
+                  <td>
+                    <button class="approve-btn" (click)="approveRequest(request)">Approve</button>
+                    <button class="reject-btn" (click)="rejectRequest(request)">Reject</button>
+                  </td>
+
+                  <td><div class="button-container">
+                      <label class="label">
+                          <input type="checkbox" class="input" />
+                          <span class="circle"><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                  viewBox="0 0 24 24">
+                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                      d="M12 19V5m0 14-4-4m4 4 4-4"></path>
+                              </svg>
+                              <div class="square"></div>
+                          </span>
+                          <p class="title">Download</p>
+                          <p class="title2">Open</p>
+                      </label>
+                  </div></td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+    <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="detailsModalLabel">Supplier Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="profileView">
+            <p><strong>Image:</strong> <img src="{{ selectedRequest.image }}" alt="Profile" width="20%"></p>
+            <p><strong>Name:</strong> {{ selectedRequest.name }}</p>
+            <p><strong>Date:</strong> {{ selectedRequest.date }}</p>
+            <p><strong>Type:</strong> {{ selectedRequest.type }}</p>
+            <p><strong>Email:</strong> {{ selectedRequest.email }}</p>
+            <p><strong>Contact:</strong> {{ selectedRequest.contact }}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            
+<div class="container mb-5">
+  <h1 class="text-center my-4">Supplier Requests</h1>
+  
+  <div class="table-responsive">
+    <table class="table table-hover align-middle">
+      <thead class="table-primary">
+        <tr>
+          <th class="ps-3">DATE</th>
+          <th>NAME</th>
+          <th>TYPE</th>
+          <th>DETAILS</th>
+          <th>STATUS</th>
+          <th class="pe-3">EXPORT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of requests">
+          <td class="ps-3">{{request.date}}</td>
+          <td>
+            <div class="d-flex align-items-center">
+              <div class="position-relative me-2">
+                <img src="{{request.image || 'assets/images/default-profile.png'}}" 
+                    
+                     class="rounded-circle object-fit-cover border border-primary"
+                     width="40" 
+                     height="40"
+                     onerror="this.src='assets/images/default-profile.png'; this.onerror=null;">
+                <span *ngIf="!request.image" class="position-absolute top-50 start-50 translate-middle text-muted">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
+              <span class="fw-medium">{{request.name}}</span>
+            </div>
+          </td>
+          <td>{{request.type}}</td>
+          <td>
+            <button class="btn btn-primary btn-sm" (click)="openModal(request)" data-bs-toggle="modal" data-bs-target="#detailsModal">
+              View
+            </button>
+          </td>
+          <td>
+            <div class="d-flex">
+              <button class="btn btn-success btn-sm me-2" (click)="approveRequest(request)">Approve</button>
+              <button class="btn btn-danger btn-sm" (click)="rejectRequest(request)">Reject</button>
+            </div>
+          </td>
+          <td class="pe-3">
+            <button class="btn btn-outline-dark btn-sm">
+              <i class="fas fa-download me-1"></i> Download
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title fw-bold" id="detailsModalLabel">Supplier Details</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4">
+        <div class="text-center mb-3">
+          <img src="{{ selectedRequest.image }}" alt="Profile" class="rounded-circle" width="100">
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-2">
+            <p><strong>Name:</strong><br> {{ selectedRequest.name }}</p>
+          </div>
+          <div class="col-md-6 mb-2">
+            <p><strong>Date:</strong><br> {{ selectedRequest.date }}</p>
+          </div>
+          <div class="col-md-6 mb-2">
+            <p><strong>Type:</strong><br> {{ selectedRequest.type }}</p>
+          </div>
+          <div class="col-md-6 mb-2">
+            <p><strong>Email:</strong><br> {{ selectedRequest.email }}</p>
+          </div>
+          <div class="col-md-6 mb-2">
+            <p><strong>Contact:</strong><br> {{ selectedRequest.contact }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>

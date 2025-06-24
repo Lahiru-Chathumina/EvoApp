@@ -1,0 +1,9 @@
+.carousel{
+ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Modern shadow effect */
+  border-radius: 10px; /* Optional: Adds rounded corners */
+  overflow: hidden; /* Ensures rounded corners apply properly */
+  background: #fff; /* Ensures a clean background */
+  padding: 10px; /* Adds some spacing */
+  transition: box-shadow 0.3s ease-in-out;
+}
+

@@ -1,0 +1,177 @@
+<div class="sidebar-container">
+  <div class="sidebar">
+
+  <div class="profile">
+    <img [src]="userProfileImage" alt="User" class="profile-img" [ngClass]="roleClass" />
+    <h5 class="mb-0">{{ userFullName }}</h5>
+    <p [ngClass]="roleClass">{{ userEmail }}</p>
+  </div>
+
+    <!-- Navigation links -->
+    <nav class="nav-links">
+      <a class="nav-link" [routerLink]="['/supplier/dashboard/']" routerLinkActive="active">
+        <div class="link-content">
+          <div class="icon-container">
+            <i class="fas fa-tachometer-alt"></i>
+          </div>
+          <span class="link-text">Dashboard</span>
+        </div>
+      </a>
+
+      <a class="nav-link" [routerLink]="['/supplier/dashboard/profile']" routerLinkActive="active">
+        <div class="link-content">
+          <div class="icon-container">
+            <i class="fas fa-user"></i>
+          </div>
+          <span class="link-text">Profile</span>
+        </div>
+      </a>
+
+      <a class="nav-link" [routerLink]="['/supplier/dashboard/add-packages']" routerLinkActive="active">
+        <div class="link-content">
+          <div class="icon-container">
+            <i class="fas fa-box"></i>
+          </div>
+          <span class="link-text">Packages</span>
+        </div>
+      </a>
+
+      <a class="nav-link" [routerLink]="['/supplier/dashboard/all-bookings']" routerLinkActive="active">
+        <div class="link-content">
+          <div class="icon-container">
+            <i class="fas fa-calendar-check"></i>
+          </div>
+          <span class="link-text">Bookings</span>
+        </div>
+      </a>
+
+      <a class="nav-link" [routerLink]="['/supplier/dashboard/requests']" routerLinkActive="active">
+        <div class="link-content">
+          <div class="icon-container">
+            <i class="fas fa-clipboard-list"></i>
+          </div>
+          <span class="link-text">Requests</span>
+        </div>
+      </a>
+
+      <a class="nav-link" [routerLink]="['/supplier/dashboard/add-previous']" routerLinkActive="active">
+        <div class="link-content">
+          <div class="icon-container">
+            <i class="fas fa-history"></i>
+          </div>
+          <span class="link-text">Add Previous</span>
+        </div>
+      </a>
+
+      <a class="nav-link" [routerLink]="['/supplier/dashboard/inventory']" routerLinkActive="active">
+        <div class="link-content">
+          <div class="icon-container">
+            <i class="fas fa-warehouse"></i>
+          </div>
+          <span class="link-text">Inventory</span>
+        </div>
+      </a>
+
+      <a class="nav-link" [routerLink]="['/supplier/dashboard/blogs']" routerLinkActive="active">
+        <div class="link-content">
+          <div class="icon-container">
+            <i class="fas fa-blog"></i>
+          </div>
+          <span class="link-text">Blogs</span>
+        </div>
+      </a>
+
+      <a class="nav-link" [routerLink]="['/supplier/dashboard/payments']" routerLinkActive="active">
+        <div class="link-content">
+          <div class="icon-container">
+            <i class="fas fa-credit-card"></i>
+          </div>
+          <span class="link-text">Payments</span>
+        </div>
+      </a>
+
+      <a class="nav-link" [routerLink]="['/supplier/dashboard/massages']" routerLinkActive="active">
+        <div class="link-content">
+          <div class="icon-container">
+            <i class="fas fa-comments"></i>
+          </div>
+          <span class="link-text">Messages</span>
+        </div>
+      </a>
+
+      <a class="nav-link" [routerLink]="['/supplier/dashboard/my-reviews']" routerLinkActive="active">
+        <div class="link-content">
+          <div class="icon-container">
+            <i class="fas fa-star"></i>
+          </div>
+          <span class="link-text">Reviews</span>
+        </div>
+      </a>
+    </nav>
+
+    <!-- Logout button -->
+    <div class="logout-container">
+      <button class="logout-button">
+        <div class="link-content">
+          <div class="icon-container">
+            <i class="fas fa-sign-out-alt"></i>
+          </div>
+          <span class="link-text">Logout</span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<title>Real-Time Space Timeline (Sri Lanka)</title>
+    <style>
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .time-header {
+            background: #1a3a8f;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .time-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding: 10px 0;
+        }
+        .time-event {
+            min-width: 200px;
+            background: #162d6f;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .earth-time {
+            color: #4fc3f7;
+        }
+        .space-event {
+            color: #64ffda;
+        }
+        .sri-lanka-time {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            color: #bbdefb;
+        }
+    </style>
+     <div class="sri-lanka-time">
+      <h2>🌏 Current Sri Lanka Time (IST): <span id="current-time"></span></h2>
+  </div>
+  <div class="timeline">
+      <div class="time-header">
+          <span>🌍 Earth Time (1 Hour) vs. 🚀 Space Events (Real-Time)</span>
+      </div>
+      <div class="time-container" id="timeline-events"></div>
+  </div>

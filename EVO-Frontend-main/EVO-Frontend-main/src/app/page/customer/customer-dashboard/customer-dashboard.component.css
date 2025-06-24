@@ -1,0 +1,74 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root{
+    --poppins : "Poppins", sans-serif;
+    --semibold : 600;
+    --primary-color: #0066FF;
+    --secondary-color: #D000FF;
+    --bg-horizontal: linear-gradient(to right, #0066FF , #D000FF);
+}
+
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+.evo-bg-primary {
+    background-color: #0066FF;
+}
+
+.evo-bg-approved {
+    background-color: #DCFCE7;
+}
+
+.evo-bg-pending {
+    background-color: #FEF9C3;
+}
+
+.evo-bg-rejected {
+    background-color: #FEE2E2;
+}
+
+
+
+.evo-bg-secondary {
+    background-color: #D000FF;
+}
+
+.evo-card-heading{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.evo-pending-btn {
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+}
+
+.evo-primary-text {
+    color: #0066FF;
+    font-weight: 500;
+}
+
+.evo-green-text{
+    color: #14532D;
+}
+
+.evo-pending-text{
+    color: #713F12;
+}
+
+.evo-rejected-text{
+    color: #7F1D1D;
+}
+
+.evo-table-head th {
+    background-color: #F1F5F9;
+}
+
+.evo-table-head tr {
+    font-size: 14px;
+    font-weight: 300;
+}
+

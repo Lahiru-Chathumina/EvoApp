@@ -1,0 +1,14 @@
+<div class="scroll-controls">
+    <button class="scroll-button left" (click)="scrollLeft()">&lt;</button>
+    <button class="scroll-button right" (click)="scrollRight()">&gt;</button>
+    <button class="scroll-button zoom-in" (click)="zoomIn()">
+        <i class="fa fa-search-plus"></i>
+    </button>
+    <button class="scroll-button zoom-out" (click)="zoomOut()">
+        <i class="fa fa-search-minus"></i>
+    </button>
+</div>
+<div class="timeline-container" #timelineContainer>
+    <ngx-timeline [events]="events" [orientation]=orientation [enableAnimation]="false" [groupEvent]="groupEvent"></ngx-timeline>
+</div>
+

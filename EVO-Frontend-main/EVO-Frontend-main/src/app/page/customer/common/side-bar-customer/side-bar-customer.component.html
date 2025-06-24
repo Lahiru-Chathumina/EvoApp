@@ -1,0 +1,51 @@
+<div class="sidebar">
+  <div class="profile">
+    <img [src]="userProfileImage" alt="User" class="profile-img" [ngClass]="roleClass" />
+    <h5 class="mb-0">{{ userFullName }}</h5>
+    <p [ngClass]="roleClass">{{ userEmail }}</p>
+  </div>
+
+  <ul class="sidebar-menu">
+    <li>
+      <a [routerLink]="'/customer'" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+        class="sidebar-link">
+        <i class="bi bi-house-door"></i> Dashboard
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="'/customer/profile'" routerLinkActive="active" class="sidebar-link">
+        <i class="bi bi-person"></i> Customer
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="'/customer/upcoming-event'" routerLinkActive="active" class="sidebar-link">
+        <i class="bi bi-archive"></i> Event
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="'/customer/blogs'" routerLinkActive="active" class="sidebar-link">
+        <i class="bi bi-chat-text"></i> Blogs
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="'/customer/payments'" routerLinkActive="active" class="sidebar-link">
+        <i class="bi bi-cash-stack"></i> Payments
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="'/customer/massage'" routerLinkActive="active" class="sidebar-link">
+        <i class="bi bi-envelope"></i> Messages
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="'/customer/reviews'" routerLinkActive="active" class="sidebar-link">
+        <i class="bi bi-star"></i> Review
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="''" class="sidebar-link">
+        <i class="bi bi-box-arrow-right"></i> Log Out
+      </a>
+    </li>
+  </ul>
+</div>

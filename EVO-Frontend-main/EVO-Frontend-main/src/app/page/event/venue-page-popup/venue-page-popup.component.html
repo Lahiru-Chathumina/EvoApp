@@ -1,0 +1,70 @@
+<div #venueModal class="modal fade" tabindex="-1" aria-labelledby="venueModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <div class="d-flex align-items-center w-100">
+          <div class="me-3">
+            <img [src]="currentVenue?.image" class="profile-img" style="width: 60px; height: 60px; object-fit: cover;" alt="Venue">
+          </div>
+          <h5 class="modal-title fw-bolder">{{ currentVenue?.name }}</h5>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <h5 class="fw-bold">About</h5>
+            <p class="text-muted">{{ currentVenue?.about }}</p>
+          </div>
+          <div class="col-md-6">
+            <div class="row g-3">
+              <div class="col-6">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-geo-alt-fill me-2"></i>
+                  <span>{{ currentVenue?.location.city }}</span>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-people-fill me-2"></i>
+                  <span>Capacity: {{ currentVenue?.capacity }}</span>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-cash-coin me-2"></i>
+                  <span>${{ currentVenue?.price }} / event</span>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-building me-2"></i>
+                  <span>{{ currentVenue?.venueType }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h5 class="fw-bold mb-3">Gallery</h5>
+        <div class="row g-2">
+          <div class="col-3" *ngFor="let img of imageGallery">
+            <img [src]="img.src" class="img-fluid rounded-2" style="height: 200px; width: 200px; object-fit: cover;">
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button 
+          type="button" 
+          class="btn btn-primary" data-bs-dismiss="modal"
+          (click)="bookNow()"> 
+          Book Now
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

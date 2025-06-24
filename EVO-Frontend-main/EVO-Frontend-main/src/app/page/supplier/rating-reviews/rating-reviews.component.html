@@ -1,0 +1,110 @@
+<div class="container">
+  <h2>Rating & Reviews</h2>
+  <div class="stats-container">
+    <div class="stat">
+      <p class="big-text m-3">{{ ratingStats.growth }}</p>
+      <p class="sub-text">Growth in reviews on this year</p>
+    </div>
+    <div class="stat">
+      <p class="big-text m-3">
+        {{ ratingStats.average }}
+        <ng-container *ngFor="let _ of [].constructor(5)">
+          <i class="bi bi-star-fill"></i>
+        </ng-container>
+      </p>
+      <p class="sub-text">Average Rating On Year</p>
+    </div>
+    <div>{{ ratingStats.range }}</div>
+
+    <div class="rating-chart">
+      <div
+        *ngFor="let r of ratingStats.distribution"
+        class="rating-bar"
+      >
+        <span><i class="bi bi-star-fill"></i> {{ r.stars }}</span>
+        <div class="bar" [style.width]="r.width" [style.backgroundColor]="r.color"></div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="expandable-reviews container">
+    <div class="collapse-container">
+      <div class="reviews-preview">
+        <div
+          *ngFor="let review of reviewsData.slice(0, 2)"
+          class="review card mb-3"
+        >
+          <div class="card-header d-flex align-items-center">
+            <div class="profile-pic me-3">
+              <img
+                [src]="review.profile"
+                alt="Profile"
+                class="rounded-circle"
+                width="50"
+                height="50"
+              />
+            </div>
+            <div>
+              <p class="name mb-0">{{ review.name }}</p>
+              <p class="date text-muted mb-0">{{ review.date }}</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="stars">
+              <ng-container *ngFor="let _ of [].constructor(review.rating)">
+                <i class="bi bi-star-fill text-warning"></i>
+              </ng-container>
+              <span class="ms-2 text-muted">{{ review.rating }}.0</span>
+            </p>
+            <p class="review-text">{{ review.comment }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="collapse" id="moreReviews">
+        <div
+          *ngFor="let review of reviewsData.slice(2)"
+          class="review card mb-3"
+        >
+          <div class="card-header d-flex align-items-center">
+            <div class="profile-pic me-3">
+              <img
+                [src]="review.profile"
+                alt="Profile"
+                class="rounded-circle"
+                width="50"
+                height="50"
+              />
+            </div>
+            <div>
+              <p class="name mb-0">{{ review.name }}</p>
+              <p class="date text-muted mb-0">{{ review.date }}</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="stars">
+              <ng-container *ngFor="let _ of [].constructor(review.rating)">
+                <i class="bi bi-star-fill text-warning"></i>
+              </ng-container>
+              <span class="ms-2 text-muted">{{ review.rating }}.0</span>
+            </p>
+            <p class="review-text">{{ review.comment }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a
+          data-bs-toggle="collapse"
+          href="#moreReviews"
+          role="button"
+          aria-expanded="false"
+          aria-controls="moreReviews"
+        >
+          <h6>See More Reviews</h6>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+<div id="bodyDiv">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-10">
+                <div class="card" style="border-radius: 1rem">
+                    <div class="row g-0">
+                        <div class="col-md-6 col-lg-6 d-none d-md-block">
+                            <img src="https://images.pexels.com/photos/698907/pexels-photo-698907.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                alt="Event planning" class="img-fluid custom-image" />
+                        </div>
+                        <div class="col-md-6 col-lg-6 d-flex align-items-center">
+                            <div class="card-body p-4 p-lg-5 text-black">
+
+                                <form>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <h1 class="fw-bold mb-2">Login <span id="headingLogo">EvoPlan</span></h1>
+                                    </div>
+
+                                    <div class="d-flex justify-content-center align-items-center mb-4">
+                                        <p class="mb-4">Log in to turn your event dreams into reality!</p>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label for="txtEmail">Email Address</label>
+                                        <input type="email" class="form-control p-2 border-primary border-1" id="txtEmail" 
+                                               [(ngModel)]="txtEmail" name="txtEmail" />
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="txtPassword">Password</label>
+                                        <input type="password" class="form-control p-2 border-primary border-1" id="txtPassword" 
+                                               [(ngModel)]="txtPassword" name="txtPassword" />
+                                    </div>
+
+                                    <div class="form-check mb-4 d-flex justify-content-between">
+                                        <div>
+                                            <input class="form-check-input border-primary border-1" type="checkbox" id="termsCheck" />
+                                            <label class="form-check-label" for="termsCheck"> Remember Me </label>
+                                        </div>
+                                        <label class="mt-1" for="">Forgot your password? <a href="#">Reset it here!</a></label>
+                                    </div>
+
+                                    <div class="d-grid mb-3">
+                                        <button type="button" class="btn btn-primary btn-lg p-2 fw-bold" (click)="loginButtonOnAction()">
+                                            Login
+                                        </button>
+                                    </div>
+
+                                    <p class="text-center">
+                                        Don't have an account? <a routerLink="/register">Sign Up</a>
+                                    </p>
+                                    <div class="d-flex align-items-center mb-4">
+                                        <hr class="flex-grow-1">
+                                        <p class="mx-3 mb-0">Or Login with</p>
+                                        <hr class="flex-grow-1">
+                                    </div>
+                                    <div class="d-flex justify-content-center gap-3">
+                                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/281/281764.png"
+                                                alt="Google" width="30"></a>
+                                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+                                                alt="Facebook" width="30"></a>
+                                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                                                alt="LinkedIn" width="30"></a>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 180px;
+    }
+    .content {
+        margin-left: 200px;
+    }
+    .nav-links {
+        display: none;
+    }
+}
+/* ---------------------------------------------------------------- */
+.card {
+    position: relative;
+    box-shadow: 2px 0 10px 5px rgba(0, 0, 0, 0.1);
+  }
+
+   .edit-button {
+    position: absolute;
+    bottom: 10px; 
+    right: 10px; 
+  } 
+  .profile-image {
+    width: 100px; /* Adjust this value as needed */
+    height: 100px; /* Adjust this value as needed */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+  }
+
+  .profile-image-container {
+    position: absolute;
+    top: 150px; /* Adjust this value as needed */
+    left: 5%; /* Adjust this value as needed */
+    transform: translateX(-50%);
+
+  }
+.card-body{
+    padding-left: 150px;
+}
+.form{
+    height: 30rem
+}
+/* ---------------------------------------- */
+.content{
+    margin-top:-80px;
+}
+
+
+
+
+

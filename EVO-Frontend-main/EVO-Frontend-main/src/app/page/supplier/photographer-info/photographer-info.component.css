@@ -1,0 +1,95 @@
+html, body, div{
+  zoom: 0.94;
+}
+
+.card-body{
+  width: 80%;
+  margin-top: 20px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.bottom-space{
+  padding: 80px;
+}
+
+.footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 1.2rem;
+  margin-top: 10px;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content{
+  display: flex;
+  justify-content: space-between;
+}
+
+.carousel-item{
+  display: block !important;
+}
+
+.bottom-spacing{
+  padding-bottom: 10rem;
+}
+
+
+.row.text-start {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.package-card {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-color: #dee2e6 !important;
+  background-color: #fff;
+  margin: 10px;
+  padding: 1rem;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.package-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.package-card h5 {
+  font-weight: 700;
+  color: #28a745;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+ul{
+  font-weight: 700;
+  font-size: larger;
+  color: #1f1c1c;
+}
+
+input[type="radio"] {
+  transform: scale(1.5);
+  margin-right: 10px;
+}
+
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.form-check{
+  zoom: 1.2;
+  font-weight: 500;
+}
+
+
+

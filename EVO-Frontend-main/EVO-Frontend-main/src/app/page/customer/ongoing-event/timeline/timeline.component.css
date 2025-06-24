@@ -1,0 +1,89 @@
+/* i used :: ng-deep selector to override css of NgxTimelineComponent css - Lahiru20 */
+
+::ng-deep .items-container.horizontal .col-right {
+    min-height: 100px !important;
+}
+
+::ng-deep .items-container.horizontal .col-left {
+    min-height: 200px !important;
+}
+
+::ng-deep .period-container .period-inner-container {
+  background: #007bff !important;
+}
+
+::ng-deep .center-icon-container .icon {
+  background-color: #007bff !important;
+}
+
+::ng-deep .center-inner {
+  z-index: -100 !important;
+}
+
+::ng-deep .items-container.horizontal .center-inner .line {
+  min-height: 0.2rem !important;
+}
+
+::ng-deep .event-container[_ngcontent-ng-c2599903405] .event-info-container[_ngcontent-ng-c2599903405] {
+  min-width: 10rem !important;
+}
+
+::ng-deep .items-container.horizontal[_ngcontent-ng-c2686561639] .row[_ngcontent-ng-c2686561639] {
+  padding-left: 1.5rem !important;
+}
+
+
+.timeline-container {
+    overflow-x: hidden;
+    padding-left: 20px;
+    width: 100%;
+}
+
+.scroll-controls {
+    display: flex;
+    justify-content: center;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 8px;
+    z-index: 100;
+}
+
+.scroll-button {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: background 0.3s ease;
+}
+
+.scroll-button:hover {
+    background: #004187;
+}
+
+.scroll-button.zoom-in,
+.scroll-button.zoom-out {
+    font-size: 18px;
+    background: #198754;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-button.zoom-in i,
+.scroll-button.zoom-out i {
+    font-size: 16px;
+    color: white;
+}
+
+.scroll-button.zoom-in:hover,
+.scroll-button.zoom-out:hover {
+    background: #105535;
+}

@@ -1,0 +1,69 @@
+<div class="container mt-4">
+
+    <h2 class="fw-bold">Select Your Venue</h2>
+    <p class="text-muted">Select from a range of stunning venues to match your event's style</p>
+
+    <div class="row g-2 mb-4 filter-buttons">
+        <div class="col-md-2">
+            <label class="form-label fw-bold">Start Date</label>
+            <input type="date" [(ngModel)]="eventDate" class="form-control">
+        </div>
+        <div class="col-md-2">
+            <label class="form-label fw-bold">Start Time</label>
+            <input type="time" [(ngModel)]="eventGuestCount" class="form-control">
+        </div>
+        <div class="col-md-2">
+            <label class="form-label fw-bold">End Time</label>
+            <input type="time" [ngModel]="eventEndTime" class="form-control">
+        </div>
+        <div class="col-md-2">
+            <label class="form-label fw-bold">Popularity</label>
+            <select class="form-select">
+                <option selected>Most Popular</option>
+                <option>Least Popular</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label class="form-label fw-bold">Location</label>
+            <select class="form-select">
+                <option selected>All Locations</option>
+                <option>Matara</option>
+                <option>Galle</option>
+                <option>Hambanthota</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label class="form-label fw-bold">Budget</label>
+            <select class="form-select">
+                <option selected>Any Budget</option>
+                <option>Low</option>
+                <option>Medium</option>
+                <option>High</option>
+            </select>
+        </div>
+    </div>
+</div>   
+<div class="container mt-4">
+
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let venue of venues">
+        <div class="card" style="width: 22rem;">
+          <img [src]="venue.image" class="card-img-top ratio ratio-4x3" [alt]="venue.venueType">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">{{ venue.location.city }}</h5>
+            <p class="mb-1">capacity : {{ venue.capacity }}</p>
+            <p class="mb-1">{{ venue.venueType }}</p>
+          </div>
+          <div class="card-footer text-center bg-primary">
+            <button 
+              (click)="showVenuePopup(venue)"
+              class="btn btn-primary w-100 text-white fw-bold">
+              View Details
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-venue-page-popup></app-venue-page-popup>
+  </div>
+

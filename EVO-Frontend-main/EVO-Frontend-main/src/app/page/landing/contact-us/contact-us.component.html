@@ -1,0 +1,42 @@
+<section id="contact" class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="display-5 fw-bold gradient-text">Get In Touch</h2>
+                <p class="lead">Have questions or ready to plan your next event? We're here to help!</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <h3 class="mb-4">Contact Us</h3>
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="name" name="name" [(ngModel)]="name" placeholder="Enter your name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" placeholder="Enter your email">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="4" name="message" [(ngModel)]="message" placeholder="Tell us about your event"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" (click)="submitForm()">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body p-0">
+                        <img src="https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg" alt="Our Office" class="w-100 h-100" style="object-fit: cover; border-radius: 0.375rem;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,42 @@
+<div class="p-5 mt-5">
+    <div class="content ">
+    <h1 class="mb-5" style="text-align: center; color: #292a2c;"> Booking Events</h1>
+    <table>
+        <thead>
+            <tr>
+                <th> DATE</th>
+                <th> NAME</th>
+                <th> TYPE</th>
+                <th> STATUS</th>
+                <th> View Details</th>
+                <th> Export</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let booking of bookings">
+                <td>{{booking.date}}</td>
+                <td class="name-container">
+                    <img src="/Rating-Reviews-img/profile.jpg" alt="Profile" class="profile-img">Theresa Webb
+                </td>
+                <td>{{booking.type}}</td>
+                <td><span class="status confirmed">{{booking.status}}</span></td>
+                <td><button class="view-btn" (click)="popUpDetails()">View</button></td>
+                <td><div class="button-container">
+                    <label class="label">
+                        <input type="checkbox" class="input" />
+                        <span class="circle"><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M12 19V5m0 14-4-4m4 4 4-4"></path>
+                            </svg>
+                            <div class="square"></div>
+                        </span>
+                        <p class="title">Download</p>
+                        <p class="title2">Open</p>
+                    </label>
+                </div></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

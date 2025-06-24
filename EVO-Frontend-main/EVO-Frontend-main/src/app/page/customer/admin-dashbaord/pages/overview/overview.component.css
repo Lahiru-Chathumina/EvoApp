@@ -1,0 +1,155 @@
+  
+.dashboard-container {
+    padding: 20px;
+    overflow-x: auto;  
+    margin-top: 20px;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: nowrap; 
+    gap: 40px;
+    justify-content: flex-start; 
+    overflow-x: auto; 
+  }
+  
+  .dashboard-card {
+    width: 250px; 
+    background-color: #EE61CF;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    flex-shrink: 0; 
+  }
+  
+  .dashboard-card h5 {
+    margin: 0;
+    font-size: 18px;
+    color: #000000;
+  }
+  
+  .dashboard-card p {
+    margin: 10px 0 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .card-container::after {
+    content: '';
+    flex: 0 0 20px;
+  }
+
+  .dashboard-card-start{
+    margin-left:auto;
+    width: 250px; 
+    background-color: #EE61CF;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    flex-shrink: 0; 
+  }
+
+  .dashboard-card-start h5{
+    margin: 0;
+    font-size: 18px;
+    color: #000000;
+  }
+
+  .dashboard-card-start p{
+    margin: 10px 0 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  
+.charts-wrapper {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 100%;
+  max-height: 100%;  
+}
+
+.chart-container {
+  flex: 1;
+  height: 300px;       
+  position: relative;  
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+.chart-container canvas {
+  width: 100% !important;
+  height: 90% !important;
+}
+
+@media (max-width: 768px) {
+  .charts-wrapper {
+    flex-direction: column;
+  }
+  .chart-container {
+    height: 250px; 
+  }
+}
+
+.profile-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-name {
+  font-weight: bold; /* Optional: Adjust text styling */
+}
+
+ .profile td {
+  border: 1px solid #d8d5d8 !important; 
+}
+
+.custom-thead{
+  background-color: #EE61CF;
+}
+
+.button{
+  background-color: #EE61CF;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.buttonr{
+  background-color: #2575fc;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+  
+  
+  
+  

@@ -1,0 +1,26 @@
+
+    .hover-effect {
+        transition: all 0.3s ease;
+        border-top: 3px solid transparent;
+    }
+    .hover-effect:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    }
+    .bg-purple {
+        background-color: #6f42c1;
+    }
+    .text-purple {
+        color: #6f42c1;
+    }
+    .btn-purple {
+        background-color: #6f42c1;
+        color: white;
+    }
+    .btn-purple:hover {
+        background-color: #5a32a3;
+        color: white;
+    }
+    .border-primary {
+        border-color: #0d6efd !important;
+    }

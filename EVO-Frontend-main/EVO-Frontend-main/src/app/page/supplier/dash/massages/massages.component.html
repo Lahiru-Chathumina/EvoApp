@@ -1,0 +1,157 @@
+<!-- massages.component.html -->
+<div class="container-fluid">
+  <div class="row vh-100">
+    <!-- Sidebars -->
+    <div class="col-md-4 col-lg-3 border-end p-3 bg-light d-none d-md-block">
+      <div class="d-flex gap-2 mb-3">
+        <button class="btn btn-outline-primary flex-grow-1" 
+                (click)="switchChatType('ADMIN')"
+                [class.active]="activeChatType === 'ADMIN'">
+          Admins
+        </button>
+        <button class="btn btn-outline-primary flex-grow-1" 
+                (click)="switchChatType('CUSTOMER')"
+                [class.active]="activeChatType === 'CUSTOMER'">
+          Customers
+        </button>
+      </div>
+
+      <div *ngIf="activeChatType === 'ADMIN'">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5>Admins (Supplier {{ supplierId }})</h5>
+          <span class="badge bg-primary">{{ adminIds.length }}</span>
+        </div>
+
+        <div *ngIf="loadingAdmins" class="text-center p-2">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+
+        <div class="list-group">
+          <button *ngFor="let adminId of adminIds" 
+                  type="button"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                  [class.active]="adminId === selectedAdminId"
+                  (click)="selectAdmin(adminId)">
+            <span>Admin #{{ adminId }}</span>
+            <i class="bi bi-person-circle"></i>
+          </button>
+        </div>
+      </div>
+
+      <div *ngIf="activeChatType === 'CUSTOMER'">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5>Customers (Supplier {{ supplierId }})</h5>
+          <span class="badge bg-primary">{{ customerIds.length }}</span>
+        </div>
+
+        <div *ngIf="loadingCustomers" class="text-center p-2">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+
+        <div class="list-group">
+          <button *ngFor="let customerId of customerIds" 
+                  type="button"
+                  class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                  [class.active]="customerId === selectedCustomerId"
+                  (click)="selectCustomer(customerId)">
+            <span>Customer #{{ customerId }}</span>
+            <i class="bi bi-person-circle"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Chat Section -->
+    <div class="col-md-8 col-lg-9 d-flex flex-column">
+      <!-- Chat Header -->
+      <div class="d-flex align-items-center p-3 border-bottom bg-light">
+        <h5 class="mb-0" *ngIf="activeChatType === 'ADMIN' && selectedAdminId">
+          Chat with Admin #{{ selectedAdminId }}
+        </h5>
+        <h5 class="mb-0" *ngIf="activeChatType === 'CUSTOMER' && selectedCustomerId">
+          Chat with Customer #{{ selectedCustomerId }}
+        </h5>
+        <div class="ms-auto d-flex align-items-center gap-2">
+          <span class="badge" 
+                [ngClass]="{
+                  'bg-success': connectionStatus === 'CONNECTED',
+                  'bg-warning': connectionStatus === 'CONNECTING',
+                  'bg-danger': connectionStatus === 'DISCONNECTED'
+                }">
+            {{ connectionStatus }}
+          </span>
+          <button class="btn btn-sm btn-link" 
+                  (click)="connect()" 
+                  *ngIf="connectionStatus === 'DISCONNECTED'">
+            <i class="bi bi-arrow-clockwise"></i> Reconnect
+          </button>
+        </div>
+      </div>
+
+      <!-- Chat Messages -->
+      <div class="flex-grow-1 overflow-auto p-3 bg-light" style="height: 70vh;" #chatContainer>
+        <div *ngIf="loadingMessages" class="text-center my-3">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading messages...</span>
+          </div>
+        </div>
+
+        <div *ngIf="!selectedAdminId && !selectedCustomerId" 
+             class="d-flex h-100 justify-content-center align-items-center">
+          <div class="text-center text-muted">
+            <i class="bi bi-chat-left-dots" style="font-size: 3rem;"></i>
+            <p class="mt-2">Select a contact to start chatting</p>
+          </div>
+        </div>
+
+        <div *ngIf="(selectedAdminId || selectedCustomerId) && messages.length === 0 && !loadingMessages" 
+             class="d-flex h-100 justify-content-center align-items-center">
+          <div class="text-center text-muted">
+            <i class="bi bi-chat-left" style="font-size: 3rem;"></i>
+            <p class="mt-2">No messages yet</p>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column gap-2">
+          <div *ngFor="let message of messages" 
+               [class.justify-content-end]="message.sender === 'SUPPLIER'"
+               [class.justify-content-start]="message.sender !== 'SUPPLIER'"
+               class="d-flex">
+            <div [class.bg-primary]="message.sender === 'SUPPLIER'" 
+                 [class.bg-light]="message.sender !== 'SUPPLIER'"
+                 class="p-3 rounded-3 shadow-sm" 
+                 style="max-width: 70%;">
+              <div class="text-break">{{ message.content }}</div>
+              <div class="text-end small text-muted mt-1">
+                {{ (message.sendTime | date:'shortTime') || '' }}
+                <span class="ms-2">{{ message.sender }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Message Input -->
+      <div class="p-3 border-top bg-white" *ngIf="selectedAdminId || selectedCustomerId">
+        <div class="input-group shadow">
+          <input type="text" 
+                 class="form-control" 
+                 placeholder="Type your message..."
+                 [(ngModel)]="messageText"
+                 (keyup.enter)="sendMessage()">
+          <button class="btn btn-primary" 
+                  type="button"
+                  (click)="sendMessage()"
+                  [disabled]="!messageText.trim() || connectionStatus !== 'CONNECTED'"
+                  aria-label="Send Message">
+            <i class="bi bi-send"></i> Send
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

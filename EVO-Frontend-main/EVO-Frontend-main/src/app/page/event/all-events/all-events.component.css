@@ -1,0 +1,43 @@
+    .bodytxt {
+      font-size: 15px;
+      color: rgb(133, 23, 243);
+      font-weight: 500;
+    }
+
+    .profile-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    .aboutheader {
+      font-size: 20px;
+      font-weight: 700;
+      margin-left: 20px;
+      color: rgb(0, 0, 0);
+      margin-top: 5px;
+    }
+
+    .myCarousel{
+      border-radius: 80vh;
+    }    
+
+    .gradient-btn {
+      background: linear-gradient(90deg, rgba(0,102,255,1) 0%, rgba(208,0,255,1) 100%);
+      color: white;
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .modern {
+      display: flex;
+      justify-content: center; /* Centers the card */
+      padding: 15px;
+      
+    }

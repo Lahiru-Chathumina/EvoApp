@@ -1,0 +1,108 @@
+<div class="card-body">
+  <h1 class="card-title mb-3">
+    <a class="text-decoration-none text-dark" style="cursor: pointer;">
+      {{supplier.businessName}}
+    </a>
+  </h1>
+  <div class="row mb-3">
+    <div class="col-6">
+      <span class="text-muted">Category : </span>
+      <strong>{{supplier.category}}</strong>
+    </div>
+
+
+
+    <div class="col-6 text-end">
+      <span class="text-muted">Orders : </span>
+      <strong>{{reviews}}</strong>
+    </div>
+  </div>
+  <hr>
+  <div id="carouselExample" class="carousel slide mb-3 " data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item" *ngFor="let image of images">
+        <img [src]="image.imageUrl" width="100%">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <p class="card-text mt-3">
+    {{basicinfo.description}}
+  </p>
+
+  <div class="container my-5">
+    <app-rating-reviews></app-rating-reviews>
+    <h2>Packages</h2>
+
+    <div class="row text-start">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+        <div class="col" *ngFor="let package of packages; let i = index">
+          <div class="package-card h-100" (click)="onPackageSelect(package,selectedPackage=='')">
+            <div class="package-card-body d-flex flex-column">
+              <div class="d-flex align-items-center">
+                <input type="radio" [name]="package.id" [id]="package.id" class="me-3"
+                  [checked]="selectedPackage === package.name">
+                <h4 class="package-card-title mb-0">{{package.name}}</h4>
+              </div>
+              <hr>
+              <p class="package-card-text">{{package.description}}</p>
+              <ul class="list-unstyled mt-auto">
+                <li *ngFor="let item of package.items" class="mb-2">✅ {{item}}</li>
+              </ul>
+              <h5 class="mt-auto">Rs.{{package.price}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Select your extra features</h2>
+    <br>
+    <form style="margin-left: 2rem;">
+      <div class="form-check" *ngFor="let feature of features;">
+        <input class="form-check-input" type="checkbox" [value]="feature.id" [id]="feature.id"
+          (change)="onFeatureSelect(feature)">
+        <label class="form-check-label" [for]="feature.id">
+          {{feature.feature}} (Rs.{{feature.price}})
+        </label>
+      </div>
+    </form>
+
+
+  </div>
+
+  <div class="bottom-spacing">
+
+  </div>
+
+  <div class="z-3 position-fixed bottom-0 start-0 w-100 card border-0 shadow-sm rounded-top-3 bg-primary-subtle mt-4">
+    <div class="card-body">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div class="d-flex align-items-center">
+            <div class="me-3">
+              <div class="text-muted fs-4">Total Charges</div>
+              <div class="fw-bold display-6">Rs. {{total_charges}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 d-flex justify-content-end gap-2 mt-3 mt-md-0">
+          <button type="button" class="btn btn-outline-secondary btn-xl fs-4">
+            <i class="bi bi-arrow-left me-1"></i>Back
+          </button>
+          <button routerLink="/event/event-summery" type="button" class="btn btn-primary btn-xl fs-4"
+            (click)="addSupplier()">
+            Add Supplier
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

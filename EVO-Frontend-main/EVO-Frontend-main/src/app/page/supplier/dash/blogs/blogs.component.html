@@ -1,0 +1,405 @@
+<div class="p-5 mt-5">
+    <div class="content ">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h1 class="bg-danger-subtle" style="margin: 0;">Blogs</h1>
+            <div style="display: flex; gap: 10px;">
+              <button>Create +</button>
+            </div>
+          </div>
+          
+        <div class="d-flex flex-wrap justify-content-around gap-3">
+            <div class="card" style="width: 18rem;">
+                <img
+                    src="https://img.freepik.com/free-photo/buffet-table-with-snacks-from-burgers-cheeses-etc_140725-9343.jpg?ga=GA1.1.2068334286.1728532825&semt=ais_hybrid">
+                <div class="card-body">
+                    <h5 class="card-title">Elevate Your Events with Kaveen’s Catering Services</h5>
+
+                    <div class="row">
+                        <div class="col">
+                            <img src="https://img.freepik.com/free-photo/close-up-portrait-curly-handsome-european-male_176532-8133.jpg?uid=R181218523&ga=GA1.1.2068334286.1728532825&semt=ais_hybrid"
+                                height="100" width="150" alt="User">
+                        </div>
+                        <div class="col">
+                            <h3>Kaveen Sasanka</h3>
+                        </div>
+                    </div>
+                    <p class="card-text">
+                        <strong class="highlight-text">Category: Catering Service</strong>
+                        <br><br>
+                        <strong>Introduction:</strong> Planning an event requires attention to detail, and one of the
+                        most
+                        crucial aspects is catering.
+
+                        Meet Kaveen, a skilled and experienced catering expert who ensures that
+                        <span *ngIf="isReadMoreVisible1">
+                            your guests enjoy a delightful dining experience.
+
+                            <br><br>
+                            <strong>Why Choose Kaveen’s Catering?</strong><br>
+                            - Diverse Menu Options<br>
+                            - High-Quality Ingredients<br>
+                            - Professional Service<br>
+                            - Customizable Packages
+                        </span>
+
+                        <br><br>
+                        <!-- Read More / Read Less button -->
+                        <div style="display: flex; justify-content: flex-end; align-items: center; gap: 10px; padding: 10px;">
+                            <button 
+                              (click)="toggleReadMore1()" 
+                              style="padding: 8px 16px; background-color: #0d6efd; color: white; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;">
+                              {{ isReadMoreVisible1 ? 'Read Less' : 'Read More' }}
+                            </button>
+                          
+                            <button 
+                              class="like-button" 
+                              (click)="toggleLike1()" 
+                              style="padding: 8px 16px; background-color: #dc3545; color: white; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;">
+                              {{ isLiked1 ? 'Liked' : 'Like' }} ({{ likeCount1 }})
+                            </button>
+                          </div>
+                          
+                    
+
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img
+                    src="https://img.freepik.com/free-photo/top-view-photo-camera-indoors-still-life_23-2150630943.jpg?ga=GA1.1.2068334286.1728532825&semt=ais_hybrid">
+                <div class="card-body">
+                    <h5 class="card-title">Category: Photography</h5>
+                    <h6>
+                        <div class="profile">
+                            <img src="https://img.freepik.com/premium-photo/young-business-man-office_52137-21058.jpg?uid=R181218523&ga=GA1.1.2068334286.1728532825&semt=ais_hybrid"
+                                width="150" height="200" alt="User">
+                            <h3>Nadun Perera</h3>
+                        </div>
+                    </h6>
+                    <p class="card-text">
+                        <strong class="highlight-text">Capture Unforgettable Moments with Perera’s Photography
+                            Services</strong>
+                        <br> <br>
+                        <strong>Introduction:</strong> A perfect event isn’t just about decorations or food—it’s about
+                        the
+                        <span *ngIf="isReadMoreVisible2">
+                            memories you create.
+
+                            Perera ensures that every special moment is captured with precision and
+                            artistry.<br><br>
+
+
+                            <strong>Why Choose Perera’s Photography?</strong><br>
+                            - High-Quality Photography<br>
+                            - Professional Equipment<br>
+                            - Event Specialization<br>
+                            - Memorable Keepsakes
+                        </span>
+                        <div style="display: flex; justify-content: flex-end; align-items: center; gap: 10px; padding: 10px;">
+                            <button 
+                              (click)="toggleReadMore2()" 
+                              style="padding: 8px 16px; background-color: #0d6efd; color: white; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;">
+                              {{ isReadMoreVisible2 ? 'Read Less' : 'Read More' }}
+                            </button>
+                          
+                            <button 
+                              class="like-button" 
+                              (click)="toggleLike2()" 
+                              style="padding: 8px 16px; background-color: #dc3545; color: white; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;">
+                              ❤️{{ isLiked2 ? 'Liked' : 'Like' }} ({{ likeCount2 }})
+                            </button>
+                          </div>
+                    
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img
+                    src="https://img.freepik.com/free-photo/bearded-hipster-amateur-photographer-with-tattoos-arms-dressed-fleece-shirt-holds-compact-dslr-camera-grey-background_613910-15126.jpg?ga=GA1.1.2068334286.1728532825&semt=ais_hybrid">
+                <div class="card-body">
+                    <h5 class="card-title">Customer Experience</h5>
+
+                    <h6>
+                        <div class="profile">
+                            <img src="https://img.freepik.com/free-photo/portrait-handsome-young-man-closeup_176420-15568.jpg?uid=R181218523&ga=GA1.1.2068334286.1728532825&semt=ais_hybrid"
+                                width="150" height="100" alt="User">
+                            <h3>Naveen Samarasinha</h3>
+                        </div>
+                    </h6>
+
+                    <p class="card-text">
+                        <strong class="highlight-text">A Customer’s Experience: Capturing Precious Moments with Naveen’s
+                            Photography</strong><br><br>
+                        <strong>Introduction:</strong> As someone who recently worked with Perera, I can say that
+                        his skills and professionalism made all the difference.<br><br>
+                        <span *ngIf="isReadMoreVisible3">
+                            <strong>What I Loved:</strong><br>
+                            - Attention to Detail<br>
+                            - Professionalism<br>
+                            - High-Quality Results<br>
+                            - Quick Turnaround
+                        </span>
+                        <div style="display: flex; justify-content: flex-end; align-items: center; gap: 10px; padding: 10px;">
+                            <button 
+                              (click)="toggleReadMore3()" 
+                              style="padding: 8px 16px; background-color: #0d6efd; color: white; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;">
+                              {{ isReadMoreVisible3 ? 'Read Less' : 'Read More' }}
+                            </button>
+                          
+                            <button 
+                              class="like-button" 
+                              (click)="toggleLike3()" 
+                              style="padding: 8px 16px; background-color: #dc3545; color: white; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;">
+                              ❤️{{ isLiked3 ? 'Liked' : 'Like' }} ({{ likeCount3 }})
+                            </button>
+                          </div>
+                    
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img
+                    src="https://img.freepik.com/free-photo/makeup-artist-applying-makeup-by-brush_329181-1926.jpg?ga=GA1.1.2068334286.1728532825&semt=ais_hybrid">
+                <div class="card-body">
+                    <h5 class="card-title">Category: Beauty Salon</h5>
+                    <h6>
+                        <div class="profile">
+                            <img src="https://img.freepik.com/free-photo/portrait-young-pretty-positive-girl-smiling_176420-9609.jpg?uid=R181218523&ga=GA1.1.2068334286.1728532825&semt=ais_hybrid"
+                                width="150" height="100" alt="User">
+                            <h3>Kasuni Amandika</h3>
+                        </div>
+                    </h6>
+                    <p class="card-text">
+                        <strong class="highlight-text">Elevate Your Event with Kasuni’s Beauty Salon Services</strong>
+                        <br><br>
+                        <strong>Introduction:</strong> A well-planned event isn’t just about decorations and
+                        photography—it’s
+                        also about looking and feeling your best.
+                        <br>
+                        <br>
+                        <span *ngIf="isReadMoreVisible4">
+                            Kasuni’s Beauty Salon ensures that you shine with
+                            confidence.<br><br>
+
+                            <strong>Why Choose Kasuni’s Beauty Salon?</strong><br>
+                            - Expert Stylists<br>
+                            - Customized Looks<br>
+                            - High-Quality Products<br>
+                            - Relaxing Experience
+                        </span>
+                        <div style="display: flex; justify-content: flex-end; align-items: center; gap: 10px; padding: 10px;">
+                            <button 
+                              (click)="toggleReadMore4()" 
+                              style="padding: 8px 16px; background-color: #0d6efd; color: white; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;">
+                              {{ isReadMoreVisible4 ? 'Read Less' : 'Read More' }}
+                            </button>
+                          
+                            <button 
+                              class="like-button" 
+                              (click)="toggleLike4()" 
+                              style="padding: 8px 16px; background-color: #dc3545; color: white; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;">
+                              ❤️{{ isLiked4 ? 'Liked' : 'Like' }} ({{ likeCount4 }})
+                            </button>
+                          </div>
+                          
+
+
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img
+                    src="https://img.freepik.com/free-photo/waiter-carries-plate-with-tasty-snacks_8353-1263.jpg?ga=GA1.1.2068334286.1728532825&semt=ais_hybrid">
+                <div class="card-body">
+                    <h5 class="card-title">Category: Catering Service</h5>
+                    <h6>
+                        <div class="profile">
+                            <img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?uid=R181218523&ga=GA1.1.2068334286.1728532825&semt=ais_hybrid"
+                                height="100" width="150" alt="User">
+                            <h3>Sugath Dasanayaka</h3>
+                        </div>
+                    </h6>
+                    <p class="card-text">
+                        <strong class="highlight-text">Elevate Your Events with Sugath’s Catering Services</strong>
+                        <br><br>
+                        <strong>Introduction:</strong> Planning an event requires attention to detail, and one of the
+                        most
+                        crucial aspects is catering.
+                        <br><br>
+                        <span *ngIf="isReadMoreVisible5">
+                            <br><br>
+                            Meet Kaveen, a skilled and experienced catering expert who ensures that
+                            your guests enjoy a delightful dining experience.<br><br>
+
+                            <strong>Why Choose Kaveen’s Catering?</strong><br>
+                            - Diverse Menu Options<br>
+                            - High-Quality Ingredients<br>
+                            - Professional Service<br>
+                            - Customizable Packages
+                        </span>
+                        <div style="display: flex; justify-content: flex-end; align-items: center; gap: 10px; padding: 10px;">
+                            <button 
+                              (click)="toggleReadMore5()" 
+                              style="padding: 8px 16px; background-color: #0d6efd; color: white; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;">
+                              {{ isReadMoreVisible5 ? 'Read Less' : 'Read More' }}
+                            </button>
+                          
+                            <button 
+                              class="like-button" 
+                              (click)="toggleLike5()" 
+                              style="padding: 8px 16px; background-color: #dc3545; color: white; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;">
+                              ❤️{{ isLiked5 ? 'Liked' : 'Like' }} ({{ likeCount5 }})
+                            </button>
+                          </div>
+                     
+
+                </div>
+            </div>
+
+
+            <div class="card" style="width: 18rem;">
+                <img
+                    src="https://img.freepik.com/free-photo/beautician-with-brush-applies-white-moisturizing-mask-face-young-girl-client-spa-beauty-salon_343596-4247.jpg?ga=GA1.1.2068334286.1728532825&semt=ais_hybrid">
+                <div class="card-body">
+                    <h5 class="card-title">Category: Beauty Salon</h5>
+                    <h6>
+                        <div class="profile">
+                            <img src="https://img.freepik.com/free-photo/portrait-male-traveler-looking-camera-outdoors_23-2148148710.jpg?uid=R181218523&ga=GA1.1.2068334286.1728532825&semt=ais_hybrid"
+                                height="100" width="150" alt="User">
+                            <h3>Kaveesh Dasanayaka</h3>
+                        </div>
+                    </h6>
+                    <p class="card-text">
+                        <strong class="highlight-terxt">Pamper Yourself with Kaveesh’s Beauty Salon Services</strong>
+                        <br><br>
+                        <strong>Introduction:</strong> Looking and feeling your best is a key part of any event.
+                        <br><br>
+                        <span *ngIf="isReadMoreVisible6">
+                            Kaveesh’s Beauty Salon offers professional services to ensure you look flawless for any
+                            occasion.<br><br>
+
+                            <strong>Why Choose Kaveesh’s Beauty Salon?</strong><br>
+                            - Expert Stylists<br>
+                            - Customized Looks<br>
+                            - High-Quality Products<br>
+                            - Relaxing Experience
+                        </span>
+                        <div style="display: flex; justify-content: flex-end; align-items: center; gap: 10px; padding: 10px;">
+                            <button 
+                              (click)="toggleReadMore6()" 
+                              style="padding: 8px 16px; background-color: #0d6efd; color: white; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;">
+                              {{ isReadMoreVisible6 ? 'Read Less' : 'Read More' }}
+                            </button>
+                          
+                            <button 
+                              class="like-button" 
+                              (click)="toggleLike6()" 
+                              style="padding: 8px 16px; background-color: #dc3545; color: white; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;">
+                              ❤️{{ isLiked6 ? 'Liked' : 'Like' }} ({{ likeCount6 }})
+                            </button>
+                          </div>
+                   
+                </div>
+            </div>
+
+
+            <div class="card" style="width: 18rem;">
+                <img
+                    src="https://img.freepik.com/free-photo/high-angle-photo-camera-indoors-still-life_23-2150630966.jpg?ga=GA1.1.2068334286.1728532825&semt=ais_hybrid">
+                <div class="card-body">
+                    <h5 class="card-title">Category: Photography</h5>
+                    <h6>
+                        <div class="profile">
+                            <img src="https://img.freepik.com/free-photo/cheerful-indian-businessman-smiling-closeup-portrait-jobs-career-campaign_53876-129416.jpg?uid=R181218523&ga=GA1.1.2068334286.1728532825&semt=ais_hybrid"
+                                width="150" height="100" alt="User">
+                            <h3>Damith Ganehewage</h3>
+                        </div>
+                    </h6>
+
+                    <p class="card-text">
+                        <strong class="hignlight-text"> Capturing Special Moments with Ganehewage’s
+                            Photography</strong><br><br>
+                        <strong>Introduction:</strong> Every special moment deserves to be captured in its full glory.
+                        <br><br>
+                        <span *ngIf="isReadMoreVisible7">
+                            <br><br>
+
+                            Ganehewage ensures that your memories are preserved through beautiful and artistic
+                            photography.
+
+                            <strong>Why Choose Ganehewage’s Photography?</strong><br>
+                            - High-Quality Photography<br>
+                            - Professional Equipment<br>
+                            - Event Specialization<br>
+                            - Memorable Keepsakes
+                        </span>
+                        <div style="display: flex; justify-content: flex-end; align-items: center; gap: 10px; padding: 10px;">
+                            <button 
+                              (click)="toggleReadMore7()" 
+                              style="padding: 8px 16px; background-color: #0d6efd; color: white; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;">
+                              {{ isReadMoreVisible7 ? 'Read Less' : 'Read More' }}
+                            </button>
+                          
+                            <button 
+                              class="like-button" 
+                              (click)="toggleLike7()" 
+                              style="padding: 8px 16px; background-color: #dc3545; color: white; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;">
+                              ❤️{{ isLiked7 ? 'Liked' : 'Like' }} ({{ likeCount7 }})
+                            </button>
+                          </div>
+
+                
+
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="https://img.freepik.com/free-photo/female-hairdresser-using-hairbrush-hair-dryer_329181-1929.jpg?ga=GA1.1.2068334286.1728532825&semt=ais_hybrid"
+                    class="card-img-top" alt="Customer Experience">
+                <div class="card-body">
+                    <h5 class="card-title">Customer Experience</h5>
+                    <h6>
+                        <div class="profile">
+                            <img src="https://img.freepik.com/free-photo/portrait-confident-serious-young-man_114579-79034.jpg?uid=R181218523&ga=GA1.1.2068334286.1728532825&semt=ais_hybrid"
+                                height="100" width="150" alt="User">
+                            <h3>Maleesh Kumarawadu</h3>
+                        </div>
+                    </h6>
+                    <p class="card-text">
+                        <strong class="hightlight-text"> A Client’s Experience: Experiencing Excellence with Maleesh’s
+                            Beauty
+                            Salon</strong><br><br>
+                        <strong>Introduction:</strong> As someone who had the pleasure of visiting br <br><br>
+
+
+                        <span *ngIf="isReadMoreVisible8">
+                            Maleesh’s Beauty Salon, I can
+                            confidently say that the experience was top-notch. From the moment I entered, I was greeted
+                            with
+                            warmth
+                            and professionalism.<br><br>
+
+
+                            <strong>What I Loved:</strong><br>
+                            - Welcoming Atmosphere<br>
+                            - Skilled and Professional Stylists<br>
+                            - Relaxing Environment<br>
+                            - Personalized Servic
+                        </span>
+
+                        <div style="display: flex; justify-content: flex-end; align-items: center; gap: 10px; padding: 10px;">
+                            <button 
+                              (click)="toggleReadMore8()" 
+                              style="padding: 8px 16px; background-color: #0d6efd; color: white; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;">
+                              {{ isReadMoreVisible8 ? 'Read Less' : 'Read More' }}
+                            </button>
+                          
+                            <button 
+                              class="like-button" 
+                              (click)="toggleLike8()" 
+                              style="padding: 8px 16px; background-color: #dc3545; color: white; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;">
+                              ❤️{{ isLiked8 ? 'Liked' : 'Like' }} ({{ likeCount8 }})
+                            </button>
+                          </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

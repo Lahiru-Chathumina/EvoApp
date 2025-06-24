@@ -1,0 +1,14 @@
+.bi-star-fill{
+    color: rgb(244, 202, 66);
+}
+.bi-star-half{
+    color: rgb(244, 202, 66);
+}
+.card {
+    color: rgb(96, 94, 94);
+}
+.card-header{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 28;
+    font-style: bold;
+}

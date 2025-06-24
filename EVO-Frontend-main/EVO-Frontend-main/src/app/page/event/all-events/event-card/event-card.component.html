@@ -1,0 +1,28 @@
+<div class="card event-card shadow-sm border-1">
+  <div class="card-header text-white d-flex justify-content-between align-items-center">
+    <span class="badge bg-light text-black">{{eventDetails.eventType}}</span>
+    <div class="user-avatar">
+      <img src="https://th.bing.com/th/id/OIP.LuVw9F4q8sfFqfMvPKafegHaHa?rs=1&pid=ImgDetMain" class="rounded-circle border border-2 border-white" alt="User Avatar">
+    </div>
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-title mb-3">
+      <span class="text-muted">{{eventDetails.user.firstName }}'s</span>
+      {{eventDetails.eventType}}
+    </h5>
+    
+    <div class="bg-light p-3 rounded mb-3">
+      <div class="d-flex align-items-center mb-2">
+        <span class="me-2 text-primary">💰</span>
+        <div class="d-flex justify-content-between w-100">
+          <small class="text-muted">Event Budget</small>
+          <span class="fw-bold text-dark">{{eventDetails.budgetType}}</span>
+        </div>
+      </div>
+      <p class="card-text text-muted small mb-0">{{eventDetails?.description}}</p>
+    </div>
+  </div>
+
+  <app-event-supplier-card [suppliers]="eventDetails.supplierList"></app-event-supplier-card>
+</div>

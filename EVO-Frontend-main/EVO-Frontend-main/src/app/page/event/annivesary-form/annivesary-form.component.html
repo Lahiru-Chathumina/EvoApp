@@ -1,0 +1,207 @@
+<div id="bodyDiv">
+  <div class="container">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col col-xl-10">
+        <div class="card">
+          <div class="row g-0 container">
+            <div class="col-md-6 col-lg-6 d-none d-md-block">
+              <div
+                id="carouselExampleAutoplaying"
+                class="carousel slide"
+                data-bs-ride="carousel"
+              >
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img
+                      src="https://images.pexels.com/photos/6532812/pexels-photo-6532812.jpeg?auto=compress&cs=tinysrgb&w=500"
+                      class="d-block w-100 h-25"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="https://images.pexels.com/photos/5713385/pexels-photo-5713385.jpeg?auto=compress&cs=tinysrgb&w=500"
+                      class="d-block w-100 h-50"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="https://images.pexels.com/photos/5834594/pexels-photo-5834594.jpeg?auto=compress&cs=tinysrgb&w=500"
+                      class="d-block w-100 h-50"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="https://images.pexels.com/photos/9451792/pexels-photo-9451792.jpeg?auto=compress&cs=tinysrgb&w=500"
+                      class="d-block w-100 h-50"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="https://images.pexels.com/photos/6532812/pexels-photo-6532812.jpeg?auto=compress&cs=tinysrgb&w=500"
+                      class="d-block w-100 h-50"
+                      alt="..."
+                    />
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-6 d-flex align-items-center">
+              <div class="card-body p-lg-5 text-black">
+                <form class="">
+                  <div class="d-flex justify-content-center align-items-center">
+                    <h3 class="fw-bold page-heading">
+                      Anniversary Celebration
+                    </h3>
+                  </div>
+
+                  <div id="formDiv" [formGroup]="anniversaryForm">
+                    <div>
+                      <div class="mb-2">
+                        <label for="txtEmail">Enter anniversary year</label>
+                        <input
+                          type="number"
+                          class="form-control p-2 border-primary border-1"
+                          id="txtyear"
+                          formControlName="year"
+                          name="txtyear"
+                        />
+                      </div>
+
+                      <div class="mb-2">
+                        <label for="txtEmail">Enter wife's name</label>
+                        <input
+                          type="text"
+                          class="form-control p-2 border-primary border-1"
+                          id="txtWifeName"
+                          formControlName="wifeName"
+                          name="txtWifeName"
+                        />
+                      </div>
+
+                      <div class="mb-2">
+                        <label for="txthusbanName">Enter Husband's Name</label>
+                        <input
+                          type="text"
+                          class="form-control p-2 border-primary border-1"
+                          id="husbanName"
+                          formControlName="husbandName"
+                          name="husbanName"
+                        />
+                      </div>
+
+                      <div class="mb-2">
+                        <label for="StartDate">Event Start Date</label>
+                        <input
+                          type="date"
+                          class="form-control p-2 border-primary border-1"
+                          id="startDate"
+                          formControlName="startDate"
+                          name="StartDate"
+                        />
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6">
+                          <label for="txtFirstName">Event Start Time</label>
+                          <input
+                            type="time"
+                            class="form-control p-2 border-primary border-1"
+                            id="startTime"
+                            formControlName="startTime"
+                            name="StartTime"
+                          />
+                        </div>
+
+                        <div class="col-md-6">
+                          <label for="txtLastName">Event End Time</label>
+                          <input
+                            type="time"
+                            class="form-control p-2 border-primary border-1"
+                            id="endTime"
+                            formControlName="endTime"
+                            name="endTime"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="mb-2">
+                        <label for="txtEmail">Enter Capacity</label>
+                        <input
+                          type="number"
+                          class="form-control p-2 border-primary border-1"
+                          id="Capacity"
+                          formControlName="capacity"
+                          name="Capacity"
+                        />
+                      </div>
+                      <div class="mb-2">
+                        <label for="txtEmail">Description</label>
+                        <textarea
+                          id="description"
+                          class="form-control textarea"
+                          rows="3"
+                          formControlName="description"
+                        ></textarea>
+                      </div>
+
+                      <div class="d-grid mt-3">
+                        <button
+                          type="button"
+                          class="btn btn-primary btn-lg p-2 fw-bold animation-button"
+                          (click)="handleButtonClick()"
+                        >
+                          Book Now
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  *ngFor="let heart of hearts"
+  class="heart"
+  [style.left]="heart.x + '%'"
+  [style.font-size]="heart.size + 'px'"
+  [style.animation-delay]="heart.delay + 'ms'"
+  [style.animation-duration]="heart.speed + 's'"
+  [style.transform]="'rotate(' + heart.rotation + 'deg)'"
+>
+  ❤️
+</div>

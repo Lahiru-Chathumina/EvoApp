@@ -1,0 +1,68 @@
+<div class="card shadow-sm">
+  <div class="card-header bg-white border-bottom-0 d-flex justify-content-between align-items-center">
+    <h5 class="card-title mb-0 text-primary">{{title}}</h5>
+    <span *ngIf="isLive" class="badge bg-danger pulse">LIVE</span>
+    <span *ngIf="isCompleted" class="badge bg-secondary">COMPLETED</span>
+  </div>
+  <div class="card-body">
+    <p class="card-text">{{description}}</p>
+
+    <div class="event-details mb-3">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-2">
+            <small class="text-muted">Start Time</small>
+            <div>{{start_time | date:'shortTime'}}</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-2">
+            <small class="text-muted">End Time</small>
+            <div>{{end_time | date:'shortTime'}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="progress mb-3">
+      <div class="progress-bar bg-success" role="progressbar" [style.width.%]="progressPercentage"
+          [attr.aria-valuenow]="progressPercentage" aria-valuemin="0" aria-valuemax="100">
+        {{progressPercentage}}%
+      </div>
+    </div>
+
+    <div class="countdown-section d-flex justify-content-between align-items-end">
+      <div class="status" *ngIf="isLive">
+        <span class="badge bg-danger pulse-dot me-1"></span> Task in progress
+      </div>
+      <div class="status" *ngIf="isCompleted">
+        <span class="badge bg-secondary me-1"></span> Task completed
+      </div>
+
+      <div class="countdown text-end" *ngIf="!isCompleted">
+        <small class="text-muted d-block">Time Left</small>
+        <div class="timer">
+          <span class="time-unit">
+            <span class="time-value">{{timeLeft.days}}</span>
+            <small>days</small>
+          </span>
+          <span class="time-separator">:</span>
+          <span class="time-unit">
+            <span class="time-value">{{timeLeft.hours | number:'2.0-0'}}</span>
+            <small>hrs</small>
+          </span>
+          <span class="time-separator">:</span>
+          <span class="time-unit">
+            <span class="time-value">{{timeLeft.minutes | number:'2.0-0'}}</span>
+            <small>min</small>
+          </span>
+          <span class="time-separator">:</span>
+          <span class="time-unit">
+            <span class="time-value">{{timeLeft.seconds | number:'2.0-0'}}</span>
+            <small>sec</small>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+@media (max-width: 768px) {
+    .filter-controls .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    .filter-controls .col-12 {
+      margin-bottom: 10px;
+    }
+  
+    .table-responsive {
+      overflow-x: auto;
+    }
+  }
+  

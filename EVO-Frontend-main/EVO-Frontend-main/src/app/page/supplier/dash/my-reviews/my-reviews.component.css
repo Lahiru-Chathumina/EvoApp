@@ -1,0 +1,248 @@
+.review-container {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.bg-light {
+    background-color: #ffffff !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 0 15px 15px 0;
+}
+
+.filter-section {
+    padding: 1.5rem;
+}
+
+.filter-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.filter-title i {
+    margin-right: 8px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: none;
+    position: relative;
+    z-index: 1;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #D000FF, #0066FF, #D000FF);
+    z-index: -1;
+    border-radius: 14px;
+    background-size: 300%;
+    animation: gradientBorder 4s ease infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+@keyframes gradientBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 102, 255, 0.2);
+}
+
+.card-body {
+    padding: 1.5rem;
+    position: relative;
+    z-index: 2;
+    background: #ffffff;
+    margin: 2px;
+    border-radius: 10px;
+}
+
+.review-header {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.review-user-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+    border: 2px solid #e2e8f0;
+}
+
+.review-user-info {
+    flex: 1;
+}
+
+.review-user-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    background: linear-gradient(to right, #0066FF, #D000FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.review-rating {
+    color: #ffc107;
+    margin-bottom: 0.25rem;
+}
+
+.review-date {
+    color: #718096;
+    font-size: 0.85rem;
+}
+
+.review-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #2d3748;
+}
+
+.review-content {
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.review-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-outline-primary {
+    border: 1px solid #0066FF;
+    color: #0066FF;
+    transition: all 0.3s ease;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.btn-outline-primary:hover {
+    background: linear-gradient(to right, #0066FF, #D000FF);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 102, 255, 0.2);
+}
+
+.btn-outline-secondary {
+    border: 1px solid #e2e8f0;
+    color: #4a5568;
+    transition: all 0.3s ease;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.btn-outline-secondary:hover {
+    background: #f7fafc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.review-main-header {
+    padding: 1rem 1.5rem;
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.review-main-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    background: linear-gradient(to right, #0066FF, #D000FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.review-count {
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+.write-review-btn {
+    background: linear-gradient(to right, #0066FF, #D000FF);
+    border: none;
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 102, 255, 0.2);
+}
+
+.write-review-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 102, 255, 0.3);
+}
+
+.summary-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.summary-item:last-child {
+    border-bottom: none;
+}
+
+.summary-value {
+    font-weight: 700;
+    color: #2d3748;
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #0066FF, #D000FF);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

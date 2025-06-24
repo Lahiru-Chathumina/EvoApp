@@ -1,0 +1,86 @@
+<div class="container mt-4">
+    <!-- Create Notification Button -->
+    <div class="d-flex justify-content-start mb-3">
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createNotificationModal">
+        <i class="bi bi-plus-lg"></i> Create Notification
+      </button>
+    </div>
+  
+    <!-- Notifications Table inside a Card -->
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">Notifications</h5>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+              <tr>
+                <th>No</th>
+                <th>Status</th>
+                <th>Description</th>
+                <th>Trigger</th>
+                <th>Date Created</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let notification of notifications; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>
+                  <span class="badge" [ngClass]="notification.status === 'Delivering' ? 'bg-warning' : 'bg-success'">
+                    {{ notification.status }}
+                  </span>
+                </td>
+                <td>{{ notification.description }}</td>
+                <td>{{ notification.trigger }}</td>
+                <td>{{ notification.date }}</td>
+                <td>
+                  <button class="btn btn-warning btn-sm me-2" (click)="updateNotification(i)">Update</button>
+                  <button class="btn btn-danger btn-sm" (click)="deleteNotification(i)">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal for Creating Notification -->
+  <div class="modal fade" id="createNotificationModal" tabindex="-1" aria-labelledby="createNotificationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="createNotificationModalLabel">Add Notification</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form (submit)="addNotification()">
+            <div class="mb-3">
+              <label>Status:</label>
+              <select [(ngModel)]="newNotification.status" name="status" class="form-control">
+                <option value="Delivering">Delivering</option>
+                <option value="Delivered">Delivered</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label>Description:</label>
+              <input type="text" [(ngModel)]="newNotification.description" name="description" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label>Trigger:</label>
+              <input type="text" [(ngModel)]="newNotification.trigger" name="trigger" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label>Date Created:</label>
+              <input type="text" [(ngModel)]="newNotification.date" name="date" class="form-control" readonly>
+            </div>
+            <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Add Notification</button>
+           
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

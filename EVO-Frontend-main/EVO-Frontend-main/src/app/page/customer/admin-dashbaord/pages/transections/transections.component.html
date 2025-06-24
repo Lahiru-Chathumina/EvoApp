@@ -1,0 +1,100 @@
+<div class="table-container">
+  <div class="filter-controls">
+    <div class="row g-2 mb-4 filter-buttons justify-content-center align-items-center">
+      <div class="col-md-3">
+        <label class="form-label ps-2">
+          <h6>Date</h6>
+        </label>
+        <input type="date" placeholder="Start Date" class="form-control" [(ngModel)]="filter.date" />
+      </div>
+  
+      <div class="col-md-3">
+        <label class="form-label ps-2">
+          <h6>Supplier Name</h6>
+        </label>
+        <input type="text" placeholder="John Doe" class="form-control" [(ngModel)]="filter.supplierName" />
+      </div>
+  
+      <div class="col-md-3">
+        <label class="form-label ps-2">
+          <h6>Amount</h6>
+        </label>
+        <input type="number" placeholder="-" class="form-control" [(ngModel)]="filter.amount" />
+      </div>
+  
+      <div class="col-md-3">
+        <label class="form-label">Supplier Type</label>
+        <select class="form-select h-100" [(ngModel)]="filter.supplierType">
+          <option value="">All</option>
+          <option>Photographer</option>
+          <option>Catering</option>
+          <option>Beauty Salon</option>
+          <option>Venue</option>
+          <option>Type 1</option>
+        </select>
+      </div>
+    </div>
+    
+    <!-- Add a clear filters button -->
+    <div class="row mb-2">
+      <div class="col-12 text-end">
+        <button class="btn btn-secondary" (click)="clearFilters()">Clear Filters</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--//--- transection-table -->
+
+<div class="table-container">
+  <table class="table table-hover table-bordered shadow-lg">
+    <thead class="custom-thead">
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Transection ID</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Supplier Name</th>
+        <th scope="col">Supplier Type</th>
+        <th scope="col">Customer Name</th>
+        <th scope="col">Export</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of filteredTransection">
+        <td scope="row">{{ item.date }}</td>
+        <td>{{ item.transectionId }}</td>
+        <td>{{ item.amount }}</td>
+        <td>{{ item.supplierName }}</td>
+        <td>{{ item.supplierType }}</td>
+        <td>{{ item.customerName }}</td>
+        <td>
+          <div class="button-container">
+            <label class="label">
+              <input type="checkbox" class="input" />
+              <span class="circle"
+                ><svg
+                  class="icon"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M12 19V5m0 14-4-4m4 4 4-4"
+                  ></path>
+                </svg>
+                <div class="square"></div>
+              </span>
+              <p class="title">Download</p>
+              <p class="title2">Open</p>
+            </label>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

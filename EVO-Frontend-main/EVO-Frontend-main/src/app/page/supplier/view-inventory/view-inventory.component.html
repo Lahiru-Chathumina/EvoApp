@@ -1,0 +1,26 @@
+<div class="card mb-4 card-container row">
+  <div class="card-header"><strong>View Our Asset</strong></div>
+
+  <div class="card-body">
+    <div class="g-3 row">
+      <!-- Put the *ngFor directly on the column div -->
+      <div *ngFor="let inventory of inventories" class="col-12 col-md-4 col-sm-6">
+        <div class="card" id="">
+          <div class="card-header text-center">
+            <img
+              src={{inventory.imageURL}}
+              alt="Product Image"
+              class="card-img image"
+            />
+          </div>
+          <div class="card-body">
+            <h4 class="card-title text-center fw-bold">{{inventory.title}}</h4>
+            <p class="card-text">
+              {{inventory.description}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+.object-cover {
+  object-fit: cover;
+}
+
+.bottom-space{
+  padding: 40px;
+}

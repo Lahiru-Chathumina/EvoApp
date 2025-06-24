@@ -1,0 +1,86 @@
+<div class="row" >
+
+  <div class="container myContainer col">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://img.freepik.com/free-photo/male-female-friends-enjoying-drinks-while-dancing-bar_23-2148037475.jpg?ga=GA1.1.57700157.1730957812&semt=ais_hybrid" class="d-block w-100" alt="Get Together Image">
+        </div>
+        <div class="carousel-item">
+          <img src="https://img.freepik.com/free-photo/enjoying-people-celebrating-home_23-2147651790.jpg?ga=GA1.1.57700157.1730957812&semt=ais_hybrid" class="d-block w-100" alt="Dancing Crowd">
+        </div>
+        <div class="carousel-item">
+          <img src="https://img.freepik.com/free-photo/group-friends-taking-selfie-cellphone-party_23-2148037572.jpg?ga=GA1.1.57700157.1730957812&semt=ais_hybrid" class="d-block w-100" alt="Additional Image">
+        </div>
+      </div>
+     
+     
+    </div>
+  </div>
+
+
+  <div class="col">
+    <div class="text-center" id="get-together-form">
+      <h2 id="title">
+        
+        Get Together Details</h2>
+        <form (ngSubmit)="submit()" #eventForm="ngForm">
+
+          <div class="mb-3">
+            <label class="pure-material-textfield-outlined w-100">
+              <input placeholder=" " [(ngModel)]="formData.title" name="title" required>
+              <span>Title</span>
+            </label>
+            <div *ngIf="eventForm.submitted && !formData.title" class="text-danger">Title is required</div>
+          </div>
+        
+          <div class="mb-3">
+            <label class="pure-material-textfield-outlined w-100">
+              <input placeholder=" " [(ngModel)]="formData.description" name="description" required>
+              <span>Description</span>
+            </label>
+            <div *ngIf="eventForm.submitted && !formData.description" class="text-danger">Description is required</div>
+          </div>
+        
+          <div class="mb-3">
+            <label class="pure-material-textfield-outlined w-100">
+              <input type="date" placeholder=" " [(ngModel)]="formData.eventDate" name="eventDate" required>
+              <span>Event Date</span>
+            </label>
+            <div *ngIf="eventForm.submitted && !formData.eventDate" class="text-danger">Date is required</div>
+          </div>
+        
+          <div class="mb-3 row">
+            <div class="col">
+              <label class="pure-material-textfield-outlined w-100">
+                <input type="time" placeholder=" " [(ngModel)]="formData.startTime" name="startTime" required>
+                <span>Start Time</span>
+              </label>
+              <div *ngIf="eventForm.submitted && !formData.startTime" class="text-danger">Start time is required</div>
+            </div>
+            <div class="col">
+              <label class="pure-material-textfield-outlined w-100">
+                <input type="time" placeholder=" " [(ngModel)]="formData.endTime" name="endTime" required>
+                <span>End Time</span>
+              </label>
+              <div *ngIf="eventForm.submitted && !formData.endTime" class="text-danger">End time is required</div>
+            </div>
+          </div>
+        
+          <div class="mb-3">
+            <label class="pure-material-textfield-outlined w-100">
+              <input type="number" placeholder=" " [(ngModel)]="formData.capacity" name="capacity" required min="1">
+              <span>Capacity</span>
+            </label>
+            <div *ngIf="eventForm.submitted && (!formData.capacity || formData.capacity < 1)" class="text-danger">
+              Capacity must be at least 1
+            </div>
+          </div>
+        
+          <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </form>
+        
+
+    </div>
+  </div>
+</div>

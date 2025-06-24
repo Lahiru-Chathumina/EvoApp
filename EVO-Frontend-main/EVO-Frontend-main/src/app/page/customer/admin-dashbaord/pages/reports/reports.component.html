@@ -1,0 +1,329 @@
+<div class="container mb-5 mt-5 pb-5">
+    <!-- Header Section -->
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-primary">Admin Dashboard Reports</h1>
+        <p class="lead text-muted">Gain powerful insights with our comprehensive reporting tools</p>
+        <div class="border-bottom border-primary mx-auto" style="width: 100px; height: 3px;"></div>
+    </div>
+    
+    <!-- Description Section -->
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-8 text-center">
+            <div class="card shadow-sm border-0 bg-light">
+                <div class="card-body p-4">
+                    <p class="card-text fs-5">
+                        Our Admin Dashboard provides comprehensive reports to ensure smooth event planning and management. 
+                        From user insights to system audits, access detailed analytics that help optimize coordination, 
+                        organization, and execution. Make data-driven decisions for a seamless experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <!-- Report Cards Section -->
+    <div class="row g-4">
+        <!-- User Reports Card -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm hover-effect">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3">
+                            <i class="fas fa-users text-primary fs-4"></i>
+                        </div>
+                        <h5 class="card-title mb-0">User Reports</h5>
+                    </div>
+                    <p class="card-text text-muted mb-4">
+                        Detailed analytics on user activities, registrations, and engagement metrics.
+                    </p>
+                    <button class="btn btn-outline-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#reportModal">
+                        <i class="fas fa-chart-bar me-2"></i>View User Reports
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Event Reports Card -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm hover-effect">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-success bg-opacity-10 p-3 rounded-circle me-3">
+                            <i class="fas fa-calendar-alt text-success fs-4"></i>
+                        </div>
+                        <h5 class="card-title mb-0">Event Reports</h5>
+                    </div>
+                    <p class="card-text text-muted mb-4">
+                        Comprehensive analysis of all events, attendance trends, and performance metrics.
+                    </p>
+                    <button class="btn btn-outline-success rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#reportModals">
+                        <i class="fas fa-chart-pie me-2"></i>View Event Reports
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Supplier Reports Card -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm hover-effect">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-warning bg-opacity-10 p-3 rounded-circle me-3">
+                            <i class="fas fa-truck text-warning fs-4"></i>
+                        </div>
+                        <h5 class="card-title mb-0">Supplier Reports</h5>
+                    </div>
+                    <p class="card-text text-muted mb-4">
+                        Vendor performance, delivery metrics, and supplier engagement analytics.
+                    </p>
+                    <button class="btn btn-outline-warning rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#reportModalsup">
+                        <i class="fas fa-chart-line me-2"></i>View Supplier Reports
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- System Reports Card -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm hover-effect">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-info bg-opacity-10 p-3 rounded-circle me-3">
+                            <i class="fas fa-server text-info fs-4"></i>
+                        </div>
+                        <h5 class="card-title mb-0">System Reports</h5>
+                    </div>
+                    <p class="card-text text-muted mb-4">
+                        System performance, uptime statistics, and technical health metrics.
+                    </p>
+                    <button class="btn btn-outline-info rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#reportModalsystem">
+                        <i class="fas fa-chart-area me-2"></i>View System Reports
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Audit Reports Card -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm hover-effect">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-danger bg-opacity-10 p-3 rounded-circle me-3">
+                            <i class="fas fa-shield-alt text-danger fs-4"></i>
+                        </div>
+                        <h5 class="card-title mb-0">Audit Reports</h5>
+                    </div>
+                    <p class="card-text text-muted mb-4">
+                        Security logs, access history, and comprehensive audit trails.
+                    </p>
+                    <button class="btn btn-outline-danger rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#reportModalReport">
+                        <i class="fas fa-file-alt me-2"></i>View Audit Reports
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Reports Card -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm hover-effect">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-purple bg-opacity-10 p-3 rounded-circle me-3">
+                            <i class="fas fa-cogs text-purple fs-4"></i>
+                        </div>
+                        <h5 class="card-title mb-0">Custom Reports</h5>
+                    </div>
+                    <p class="card-text text-muted mb-4">
+                        Create tailored reports with our advanced report builder tool.
+                    </p>
+                    <button class="btn btn-purple rounded-pill px-4">
+                        <i class="fas fa-magic me-2"></i>Build Custom Report
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modals Section -->
+<!-- User Report Modal -->
+<div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="reportModalLabel">
+                    <i class="fas fa-users me-2"></i>Generate User Report
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <form [formGroup]="userReportForm">
+                    <div class="mb-3">
+                        <label for="userId" class="form-label fw-bold">User ID</label>
+                        <input type="text" class="form-control rounded-pill" id="userId" placeholder="Enter User ID" formControlName="userId">
+                    </div>
+                    <div class="mb-4">
+                        <label for="reportType" class="form-label fw-bold">Report Type</label>
+                        <select class="form-select rounded-pill" id="reportType" formControlName="reportType">
+                            <option value="summary">Summary Report</option>
+                            <option value="detailed">Detailed Report</option>
+                            <option value="activity">Activity Log</option>
+                            <option value="engagement">Engagement Metrics</option>
+                        </select>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary rounded-pill py-2" (click)="submitUserReport()">
+                            <i class="fas fa-file-download me-2"></i>Generate Report
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Event Report Modal -->
+<div class="modal fade" id="reportModals" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="reportModalLabel">
+                    <i class="fas fa-calendar-alt me-2"></i>Generate Event Report
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <form [formGroup]="eventReportForm">
+                    <div class="mb-3">
+                        <label for="eventId" class="form-label fw-bold">Event ID</label>
+                        <input type="text" class="form-control rounded-pill" id="eventId" placeholder="Enter Event ID" formControlName="eventId">
+                    </div>
+                    <div class="mb-4">
+                        <label for="reportType" class="form-label fw-bold">Report Type</label>
+                        <select class="form-select rounded-pill" id="reportType" formControlName="reportType">
+                            <option value="summary">Summary Report</option>
+                            <option value="detailed">Detailed Report</option>
+                            <option value="attendance">Attendance Analysis</option>
+                            <option value="financial">Financial Breakdown</option>
+                        </select>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-success rounded-pill py-2" (click)="submitEventReport()">
+                            <i class="fas fa-file-download me-2"></i>Generate Report
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Supplier Report Modal -->
+<div class="modal fade" id="reportModalsup" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+            <div class="modal-header bg-warning text-white">
+                <h5 class="modal-title" id="reportModalLabel">
+                    <i class="fas fa-truck me-2"></i>Generate Supplier Report
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <form [formGroup]="supplierReportForm">
+                    <div class="mb-3">
+                        <label for="supplierId" class="form-label fw-bold">Supplier ID</label>
+                        <input type="text" class="form-control rounded-pill" id="supplierId" placeholder="Enter Supplier ID" formControlName="supplierId">
+                    </div>
+                    <div class="mb-4">
+                        <label for="reportType" class="form-label fw-bold">Report Type</label>
+                        <select class="form-select rounded-pill" id="reportType" formControlName="reportType">
+                            <option value="summary">Summary Report</option>
+                            <option value="detailed">Detailed Report</option>
+                            <option value="performance">Performance Metrics</option>
+                            <option value="delivery">Delivery Statistics</option>
+                        </select>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-warning rounded-pill py-2 text-white" (click)="submitSupplierReport()">
+                            <i class="fas fa-file-download me-2"></i>Generate Report
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- System Report Modal -->
+<div class="modal fade" id="reportModalsystem" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+            <div class="modal-header bg-info text-white">
+                <h5 class="modal-title" id="reportModalLabel">
+                    <i class="fas fa-server me-2"></i>Generate System Report
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <form [formGroup]="systemReportForm">
+                    <div class="mb-3">
+                        <label for="systemId" class="form-label fw-bold">System ID</label>
+                        <input type="text" class="form-control rounded-pill" id="systemId" placeholder="Enter System ID" formControlName="systemId">
+                    </div>
+                    <div class="mb-4">
+                        <label for="reportType" class="form-label fw-bold">Report Type</label>
+                        <select class="form-select rounded-pill" id="reportType" formControlName="reportType">
+                            <option value="summary">Summary Report</option>
+                            <option value="detailed">Detailed Report</option>
+                            <option value="uptime">Uptime Statistics</option>
+                            <option value="performance">Performance Metrics</option>
+                        </select>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-info rounded-pill py-2 text-white" (click)="submitSystemReport()">
+                            <i class="fas fa-file-download me-2"></i>Generate Report
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="reportModalReport" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title" id="reportModalLabel">
+                    <i class="fas fa-shield-alt me-2"></i>Generate Audit Report
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <form [formGroup]="auditReportForm">
+                    <div class="mb-3">
+                        <label for="auditId" class="form-label fw-bold">Report ID</label>
+                        <input type="text" class="form-control rounded-pill" id="auditId" placeholder="Enter Report ID" formControlName="auditId">
+                    </div>
+                    <div class="mb-4">
+                        <label for="reportType" class="form-label fw-bold">Report Type</label>
+                        <select class="form-select rounded-pill" id="reportType" formControlName="reportType">
+                            <option value="summary">Summary Report</option>
+                            <option value="detailed">Detailed Report</option>
+                            <option value="security">Security Logs</option>
+                            <option value="access">Access History</option>
+                        </select>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-danger rounded-pill py-2" (click)="submitAuditReport()">
+                            <i class="fas fa-file-download me-2"></i>Generate Report
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Custom CSS for additional styling -->

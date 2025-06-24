@@ -1,0 +1,25 @@
+.about{
+  font-size: 14px;
+  font-weight: 400;
+  }
+  .bodytxt{
+    font-size: 15px;
+    color: rgb(133, 23, 243);
+    font-weight: 500;
+  }
+  .profile-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  .header{
+    margin-left: 15px;
+    margin-top: 8px;
+  }
+  .aboutheader{
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 20px;
+    color: rgb(0, 0, 0);
+    margin-top: 5px;
+  }

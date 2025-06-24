@@ -1,0 +1,183 @@
+<div class="container-fluid review-container">
+    <div class="row vh-100 p-3">
+        
+        <div class="col-md-4 col-lg-3 border-end p-3 bg-light d-none d-md-block">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5>Filters</h5>
+                <button class="btn btn-sm btn-outline-secondary" title="Reset filters">
+                    <i class="bi bi-arrow-counterclockwise"></i>
+                </button>
+            </div>
+
+            <div class="mb-4">
+                <h6 class="mb-3">Rating</h6>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="rating-5" checked>
+                    <label class="form-check-label" for="rating-5">
+                        <span class="text-warning">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </span>
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="rating-4" checked>
+                    <label class="form-check-label" for="rating-4">
+                        <span class="text-warning">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star"></i>
+                        </span>
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="rating-3" checked>
+                    <label class="form-check-label" for="rating-3">
+                        <span class="text-warning">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star"></i>
+                            <i class="bi bi-star"></i>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-4 p-3">
+                <h6 class="mb-3">Date Range</h6>
+                <div class="input-group mb-2">
+                    <span class="input-group-text"><i class="bi bi-calendar"></i></span>
+                    <input type="date" class="form-control" placeholder="From">
+                </div>
+                <div class="input-group mb-2">
+                    <span class="input-group-text"><i class="bi bi-calendar"></i></span>
+                    <input type="date" class="form-control" placeholder="To">
+                </div>
+            </div>
+
+            <div class="card bg-light border-0 p-3">
+                <h6 class="mb-3">Summary</h6>
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Total Reviews</span>
+                    <span class="fw-bold">{{reviews.length}} <i class="bi bi-star-fill text-warning"></i></span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Average Rating</span>
+                    <span class="fw-bold">{{averageRating | number:'1.1-1'}} <i class="bi bi-star-fill text-warning"></i></span>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <span>This Month</span>
+                    <span class="fw-bold">{{reviewsThisMonth}} <i class="bi bi-star-fill text-warning"></i></span>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="col-md-8 col-lg-9 d-flex flex-column p-0">
+            <div class="d-flex align-items-center p-3 border-bottom bg-light">
+                <div class="flex-grow-1">
+                    <h4 class="mb-0">Customer Reviews</h4>
+                    <small class="text-muted">Showing {{reviews.length}} of {{reviews.length}} reviews</small>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-sort-down"></i> Newest First
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Newest First</a></li>
+                        <li><a class="dropdown-item" href="#">Oldest First</a></li>
+                        <li><a class="dropdown-item" href="#">Highest Rated</a></li>
+                        <li><a class="dropdown-item" href="#">Lowest Rated</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex-grow-1 overflow-auto p-3">
+                
+                <div *ngFor="let review of reviews" class="card mb-3 border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start mb-2">
+                            <img [src]="review.avatar" class="rounded-circle me-3" width="48" height="48">
+                            <div class="flex-grow-1">
+                                <h5 class="mb-0">{{review.name}}</h5>
+                                <div class="text-warning mb-1">
+                                    <i *ngFor="let star of [1,2,3,4,5]" 
+                                        class="bi" 
+                                        [class.bi-star-fill]="star <= review.rating" 
+                                        [class.bi-star]="star > review.rating"></i>
+                                </div>
+                                <small class="text-muted">Posted on {{review.date | date}}</small>
+                            </div>
+                            <button class="btn btn-sm btn-outline-secondary">
+                                <i class="bi bi-three-dots"></i>
+                            </button>
+                        </div>
+                        <h6 class="mb-2">{{review.title}}</h6>
+                        <p class="mb-0">{{review.content}}</p>
+                    </div>
+                    <div class="card-footer bg-transparent d-flex justify-content-between">
+                        <button class="btn btn-sm btn-outline-primary">
+                            <i class="bi bi-hand-thumbs-up"></i> Helpful ({{review.helpfulCount}})
+                        </button>
+                        <button class="btn btn-sm btn-outline-secondary">
+                            <i class="bi bi-chat"></i> Reply
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="border-top p-3 bg-light text-center">
+                <button class="btn btn-primary px-4" (click)="showModal = true">
+                    <i class="bi bi-pencil-square me-2"></i> Write a Review
+                </button>
+            </div>
+        </div>
+    </div>
+
+ 
+    <div class="modal fade" [class.show]="showModal" [style.display]="showModal ? 'block' : 'none'" tabindex="-1" aria-labelledby="addReviewModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addReviewModalLabel">Write a Review</h5>
+                    <button type="button" class="btn-close" (click)="showModal = false" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form (ngSubmit)="addReview()">
+                        <div class="mb-3">
+                            <label class="form-label">Rating</label>
+                            <div class="rating-stars">
+                                <span *ngFor="let star of [1,2,3,4,5]" 
+                                      (click)="newReview.rating = star" 
+                                      class="star"
+                                      [class.text-warning]="star <= newReview.rating"
+                                      [class.text-muted]="star > newReview.rating">
+                                    <i class="bi" [class.bi-star-fill]="star <= newReview.rating" [class.bi-star]="star > newReview.rating"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="reviewTitle" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="reviewTitle" [(ngModel)]="newReview.title" name="title" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="reviewContent" class="form-label">Your Review</label>
+                            <textarea class="form-control" id="reviewContent" rows="4" [(ngModel)]="newReview.content" name="content" required></textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" (click)="showModal = false">Close</button>
+                            <button type="submit" class="btn btn-primary">Submit Review</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,100 @@
+
+<div class="p-5 mt-5">
+  <div class="content ">
+    <h1 style="text-align: center; color: #000510;" class="fw-bold"> Inventory</h1>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModals" data-bs-whatever="@getbootstrap"><i class="bi bi-plus-circle"></i>  ADD ITEM</button>
+    <table>
+        <thead>
+            <tr>
+                <th class="text-center"> TITLE</th>
+                <th class="text-center"> IMAGE</th>
+                <th class="text-center"> CATEGORY</th>
+                <th class="text-center"> DESCRIPTION</th>
+                <th class="text-center"> ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let inventory of inventories">
+                <td>{{inventory.title}}</td>
+                <td class="name-container">
+                    <img src={{inventory.imageURL}} alt="image" class="profile-img">
+                </td>
+                <td>{{inventory.category}}</td>
+                <td>{{inventory.description}}</td>
+
+                <td class="action-column">
+                    <button type="button" class=" rounded-circle icon-btn update-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><i class="bi bi-vector-pen"></i></button>
+                    <button class="icon-btn delete-btn" title="Delete"><i class="bi bi-trash3-fill"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <h1 class="modal-title fw-bold text-center pt-4 " id="exampleModalLabel">Update Item</h1>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="Title" class="col-form-label">Title:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="image" class="col-form-label">Image:</label>
+            <input type="file" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="category" class="col-form-label">Category:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Description:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+         
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="exampleModals" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+          <h2 class="modal-title fw-bold text-center pt-4 " id="exampleModalLabel">ADD ITEM</h2>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="Title" class="col-form-label">Title:</label>
+              <input type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="mb-3">
+              <label for="image" class="col-form-label">Image:</label>
+              <input type="file" class="form-control" id="recipient-name">
+            </div>
+            <div class="mb-3">
+              <label for="category" class="col-form-label">Category:</label>
+              <input type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Description:</label>
+              <textarea class="form-control" id="message-text"></textarea>
+            </div>
+           
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">ADD</button>
+        </div>
+      </div>
+    </div>
+</div>
